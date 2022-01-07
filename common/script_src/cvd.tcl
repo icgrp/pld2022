@@ -1,0 +1,23 @@
+open_vcd
+
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Input_1_V_V]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Input_1_V_V_ap_vld]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Input_1_V_V_ap_ack]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Input_2_V_V]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Input_2_V_V_ap_vld]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Input_2_V_V_ap_ack]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Output_1_V_V]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Output_1_V_V_ap_vld]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Output_1_V_V_ap_ack]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Output_2_V_V]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Output_2_V_V_ap_vld]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_9_0/inst/process_II_SII_weak_classifier_0_inst/Output_2_V_V_ap_ack]
+log_vcd [get_object /face_detection_sim/dut/floorplan_static_i/leaf_2_0/inst/imageScaler_top_inst/Input_1_V_V_ap_ack ]
+log_vcd [get_object  /face_detection_sim/dut/floorplan_static_i/leaf_2_0/inst/imageScaler_top_inst/Input_1_V_V]
+log_vcd [get_object  /face_detection_sim/dut/floorplan_static_i/leaf_2_0/inst/imageScaler_top_inst/Input_1_V_V_ap_vld]
+log_vcd [get_object  /face_detection_sim/dut/floorplan_static_i/leaf_2_0/inst/imageScaler_top_inst/Output_1_V_V_ap_ack]
+log_vcd [get_object  /face_detection_sim/dut/floorplan_static_i/leaf_2_0/inst/imageScaler_top_inst/Output_1_V_V]
+log_vcd [get_object  /face_detection_sim/dut/floorplan_static_i/leaf_2_0/inst/imageScaler_top_inst/Output_1_V_V_ap_vld]
+
+run 100ms
+close_vcd

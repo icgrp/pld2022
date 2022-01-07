@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root VersionMajor="1" VersionMinor="15">
+  <GenAppInfo Name="Vivado" Version="2020.2" CL="3064766" TimeStamp="Thu May 27 17:48:11 2021"/>
+  <DSA Vendor="xilinx" BoardId="u250" Name="gen3x16_xdma_3_1" VersionMajor="202020" VersionMinor="1" Description="" FeatureRomTimestamp="0" DcpLogicFunctionStripped="false" DcpEncrypt="false" Unified="true" Fixed="false" DefaultOutputType="xclbin">
+    <Host Architecture="x86_64" Interface="pcie"/>
+    <Build UsesPR="true" PlatformState="impl" AcceleratorBinaryContent="bitstream" ValidBinaryContentValues="dcp,bitstream" TopModuleName="ulp_wrapper"/>
+    <Board Name="xilinx.com:au250:1.2" Vendor="xilinx.com" Part="xcu250-figd2104-2L-e" BoardPart="xilinx.com:au250:part0:1.2">
+      <Interfaces>
+        <Interface Id="int1" Name="PCIe" Type="gen3x16"/>
+      </Interfaces>
+      <Memories>
+        <Memory Name="memory_subsystem_memory_ddr4_mem00" Type="ddr4" Size="16GB" LowestAddress="274877906944" HighestAddress="292057776127">
+          <Config>
+            <Param Name="AXI_ARBITRATION_SCHEME" Value="RD_PRI_REG"/>
+            <Param Name="BURST_LENGTH" Value="8"/>
+            <Param Name="C0.APP_ADDR_WIDTH" Value="31"/>
+            <Param Name="C0.APP_DATA_WIDTH" Value="512"/>
+            <Param Name="C0.ControllerType" Value="DDR4_SDRAM"/>
+            <Param Name="C0.DDR4_ADDR_WIDTH" Value="17"/>
+            <Param Name="C0.DDR4_AXI_ADDR_WIDTH" Value="34"/>
+            <Param Name="C0.DDR4_AXI_DATA_WIDTH" Value="512"/>
+            <Param Name="C0.DDR4_AXI_ID_WIDTH" Value="1"/>
+            <Param Name="C0.DDR4_AutoPrecharge" Value="false"/>
+            <Param Name="C0.DDR4_AxiNarrowBurst" Value="false"/>
+            <Param Name="C0.DDR4_BANK_GROUP_WIDTH" Value="2"/>
+            <Param Name="C0.DDR4_BANK_WIDTH" Value="2"/>
+            <Param Name="C0.DDR4_CL" Value="0"/>
+            <Param Name="C0.DDR4_COLUMN_WIDTH" Value="10"/>
+            <Param Name="C0.DDR4_CWL" Value="0"/>
+            <Param Name="C0.DDR4_Mem_Add_Map" Value="ROW_COLUMN_BANK_INTLV"/>
+            <Param Name="C0.DDR4_Ordering" Value="Normal"/>
+            <Param Name="C0.DDR4_RANK_WIDTH" Value="1"/>
+            <Param Name="C0.DDR4_ROW_WIDTH" Value="17"/>
+            <Param Name="C0.DDR4_tCK" Value="833"/>
+            <Param Name="C0.DDR4_tCKE" Value="0"/>
+            <Param Name="C0.DDR4_tFAW" Value="16"/>
+            <Param Name="C0.DDR4_tMRD" Value="2"/>
+            <Param Name="C0.DDR4_tRAS" Value="39"/>
+            <Param Name="C0.DDR4_tRCD" Value="17"/>
+            <Param Name="C0.DDR4_tREFI" Value="9363"/>
+            <Param Name="C0.DDR4_tRFC" Value="421"/>
+            <Param Name="C0.DDR4_tRP" Value="17"/>
+            <Param Name="C0.DDR4_tRRD" Value=""/>
+            <Param Name="C0.DDR4_tRRD_L" Value="6"/>
+            <Param Name="C0.DDR4_tRRD_S" Value="4"/>
+            <Param Name="C0.DDR4_tRTP" Value="10"/>
+            <Param Name="C0.DDR4_tWR" Value="19"/>
+            <Param Name="C0.DDR4_tWTR" Value=""/>
+            <Param Name="C0.DDR4_tWTR_L" Value="10"/>
+            <Param Name="C0.DDR4_tWTR_S" Value="4"/>
+            <Param Name="C0.DDR4_tXPR" Value="109"/>
+            <Param Name="C0.DDR4_tZQCS" Value="128"/>
+            <Param Name="C0.DDR4_tZQI" Value="0"/>
+            <Param Name="C0.DDR4_tZQINIT" Value="256"/>
+            <Param Name="CAS_LATENCY" Value="17"/>
+            <Param Name="CAS_WRITE_LATENCY" Value="12"/>
+            <Param Name="DATA_WIDTH" Value="72"/>
+            <Param Name="MEMORY_PART" Value="MTA18ASF2G72PZ-2G3"/>
+            <Param Name="MEM_ADDR_MAP" Value="ROW_COLUMN_BANK_INTLV"/>
+            <Param Name="TIMEPERIOD_PS" Value="833"/>
+          </Config>
+        </Memory>
+        <Memory Name="memory_subsystem_memory_ddr4_mem01" Type="ddr4" Size="16GB" LowestAddress="412316860416" HighestAddress="429496729599">
+          <Config>
+            <Param Name="AXI_ARBITRATION_SCHEME" Value="RD_PRI_REG"/>
+            <Param Name="BURST_LENGTH" Value="8"/>
+            <Param Name="C0.APP_ADDR_WIDTH" Value="31"/>
+            <Param Name="C0.APP_DATA_WIDTH" Value="512"/>
+            <Param Name="C0.ControllerType" Value="DDR4_SDRAM"/>
+            <Param Name="C0.DDR4_ADDR_WIDTH" Value="17"/>
+            <Param Name="C0.DDR4_AXI_ADDR_WIDTH" Value="34"/>
+            <Param Name="C0.DDR4_AXI_DATA_WIDTH" Value="512"/>
+            <Param Name="C0.DDR4_AXI_ID_WIDTH" Value="1"/>
+            <Param Name="C0.DDR4_AutoPrecharge" Value="false"/>
+            <Param Name="C0.DDR4_AxiNarrowBurst" Value="false"/>
+            <Param Name="C0.DDR4_BANK_GROUP_WIDTH" Value="2"/>
+            <Param Name="C0.DDR4_BANK_WIDTH" Value="2"/>
+            <Param Name="C0.DDR4_CL" Value="0"/>
+            <Param Name="C0.DDR4_COLUMN_WIDTH" Value="10"/>
+            <Param Name="C0.DDR4_CWL" Value="0"/>
+            <Param Name="C0.DDR4_Mem_Add_Map" Value="ROW_COLUMN_BANK_INTLV"/>
+            <Param Name="C0.DDR4_Ordering" Value="Normal"/>
+            <Param Name="C0.DDR4_RANK_WIDTH" Value="1"/>
+            <Param Name="C0.DDR4_ROW_WIDTH" Value="17"/>
+            <Param Name="C0.DDR4_tCK" Value="833"/>
+            <Param Name="C0.DDR4_tCKE" Value="0"/>
+            <Param Name="C0.DDR4_tFAW" Value="16"/>
+            <Param Name="C0.DDR4_tMRD" Value="2"/>
+            <Param Name="C0.DDR4_tRAS" Value="39"/>
+            <Param Name="C0.DDR4_tRCD" Value="17"/>
+            <Param Name="C0.DDR4_tREFI" Value="9363"/>
+            <Param Name="C0.DDR4_tRFC" Value="421"/>
+            <Param Name="C0.DDR4_tRP" Value="17"/>
+            <Param Name="C0.DDR4_tRRD" Value=""/>
+            <Param Name="C0.DDR4_tRRD_L" Value="6"/>
+            <Param Name="C0.DDR4_tRRD_S" Value="4"/>
+            <Param Name="C0.DDR4_tRTP" Value="10"/>
+            <Param Name="C0.DDR4_tWR" Value="19"/>
+            <Param Name="C0.DDR4_tWTR" Value=""/>
+            <Param Name="C0.DDR4_tWTR_L" Value="10"/>
+            <Param Name="C0.DDR4_tWTR_S" Value="4"/>
+            <Param Name="C0.DDR4_tXPR" Value="109"/>
+            <Param Name="C0.DDR4_tZQCS" Value="128"/>
+            <Param Name="C0.DDR4_tZQI" Value="0"/>
+            <Param Name="C0.DDR4_tZQINIT" Value="256"/>
+            <Param Name="CAS_LATENCY" Value="17"/>
+            <Param Name="CAS_WRITE_LATENCY" Value="12"/>
+            <Param Name="DATA_WIDTH" Value="72"/>
+            <Param Name="MEMORY_PART" Value="MTA18ASF2G72PZ-2G3"/>
+            <Param Name="MEM_ADDR_MAP" Value="ROW_COLUMN_BANK_INTLV"/>
+            <Param Name="TIMEPERIOD_PS" Value="833"/>
+          </Config>
+        </Memory>
+        <Memory Name="memory_subsystem_memory_ddr4_mem02" Type="ddr4" Size="16GB" LowestAddress="481036337152" HighestAddress="498216206335">
+          <Config>
+            <Param Name="AXI_ARBITRATION_SCHEME" Value="RD_PRI_REG"/>
+            <Param Name="BURST_LENGTH" Value="8"/>
+            <Param Name="C0.APP_ADDR_WIDTH" Value="31"/>
+            <Param Name="C0.APP_DATA_WIDTH" Value="512"/>
+            <Param Name="C0.ControllerType" Value="DDR4_SDRAM"/>
+            <Param Name="C0.DDR4_ADDR_WIDTH" Value="17"/>
+            <Param Name="C0.DDR4_AXI_ADDR_WIDTH" Value="34"/>
+            <Param Name="C0.DDR4_AXI_DATA_WIDTH" Value="512"/>
+            <Param Name="C0.DDR4_AXI_ID_WIDTH" Value="1"/>
+            <Param Name="C0.DDR4_AutoPrecharge" Value="false"/>
+            <Param Name="C0.DDR4_AxiNarrowBurst" Value="false"/>
+            <Param Name="C0.DDR4_BANK_GROUP_WIDTH" Value="2"/>
+            <Param Name="C0.DDR4_BANK_WIDTH" Value="2"/>
+            <Param Name="C0.DDR4_CL" Value="0"/>
+            <Param Name="C0.DDR4_COLUMN_WIDTH" Value="10"/>
+            <Param Name="C0.DDR4_CWL" Value="0"/>
+            <Param Name="C0.DDR4_Mem_Add_Map" Value="ROW_COLUMN_BANK_INTLV"/>
+            <Param Name="C0.DDR4_Ordering" Value="Normal"/>
+            <Param Name="C0.DDR4_RANK_WIDTH" Value="1"/>
+            <Param Name="C0.DDR4_ROW_WIDTH" Value="17"/>
+            <Param Name="C0.DDR4_tCK" Value="833"/>
+            <Param Name="C0.DDR4_tCKE" Value="0"/>
+            <Param Name="C0.DDR4_tFAW" Value="16"/>
+            <Param Name="C0.DDR4_tMRD" Value="2"/>
+            <Param Name="C0.DDR4_tRAS" Value="39"/>
+            <Param Name="C0.DDR4_tRCD" Value="17"/>
+            <Param Name="C0.DDR4_tREFI" Value="9363"/>
+            <Param Name="C0.DDR4_tRFC" Value="421"/>
+            <Param Name="C0.DDR4_tRP" Value="17"/>
+            <Param Name="C0.DDR4_tRRD" Value=""/>
+            <Param Name="C0.DDR4_tRRD_L" Value="6"/>
+            <Param Name="C0.DDR4_tRRD_S" Value="4"/>
+            <Param Name="C0.DDR4_tRTP" Value="10"/>
+            <Param Name="C0.DDR4_tWR" Value="19"/>
+            <Param Name="C0.DDR4_tWTR" Value=""/>
+            <Param Name="C0.DDR4_tWTR_L" Value="10"/>
+            <Param Name="C0.DDR4_tWTR_S" Value="4"/>
+            <Param Name="C0.DDR4_tXPR" Value="109"/>
+            <Param Name="C0.DDR4_tZQCS" Value="128"/>
+            <Param Name="C0.DDR4_tZQI" Value="0"/>
+            <Param Name="C0.DDR4_tZQINIT" Value="256"/>
+            <Param Name="CAS_LATENCY" Value="17"/>
+            <Param Name="CAS_WRITE_LATENCY" Value="12"/>
+            <Param Name="DATA_WIDTH" Value="72"/>
+            <Param Name="MEMORY_PART" Value="MTA18ASF2G72PZ-2G3"/>
+            <Param Name="MEM_ADDR_MAP" Value="ROW_COLUMN_BANK_INTLV"/>
+            <Param Name="TIMEPERIOD_PS" Value="833"/>
+          </Config>
+        </Memory>
+      </Memories>
+      <Images>
+        <Img Type="HDPI" File="au250_image.jpg"/>
+        <Img Type="MDPI" File=""/>
+        <Img Type="LDPI" File=""/>
+      </Images>
+      <PCIeId Vendor="" Device="" Subsystem=""/>
+    </Board>
+    <Devices>
+      <Device Name="fpga0" Type="8" FpgaDevice="virtexuplus:xcu250:figd2104:-2L:e">
+        <Core Name="OCL_REGION_0" Type="clc_region" ComputeUnits="60" InstancePath="level0_i/level1/level1_i/ulp" DRBDName="ulp.bd">
+          <AvailableResources LUT="1464256" REG="2928512" BRAM="2313" DSP="10634">
+            <PBlock Name="pblock_dynamic_region" ValidSLRs="SLR0,SLR1,SLR2,SLR3">
+              <Resource Name="BRAM" Val="2313"/>
+              <Resource Name="BRAM_SLR0" Val="650"/>
+              <Resource Name="BRAM_SLR1" Val="363"/>
+              <Resource Name="BRAM_SLR2" Val="628"/>
+              <Resource Name="BRAM_SLR3" Val="672"/>
+              <Resource Name="DSP" Val="10634"/>
+              <Resource Name="DSPs_SLR0" Val="3032"/>
+              <Resource Name="DSPs_SLR1" Val="1536"/>
+              <Resource Name="DSPs_SLR2" Val="2994"/>
+              <Resource Name="DSPs_SLR3" Val="3072"/>
+              <Resource Name="LUT" Val="1464256"/>
+              <Resource Name="LUT_SLR0" Val="419000"/>
+              <Resource Name="LUT_SLR1" Val="199504"/>
+              <Resource Name="LUT_SLR2" Val="413752"/>
+              <Resource Name="LUT_SLR3" Val="432000"/>
+              <Resource Name="REG" Val="2928512"/>
+              <Resource Name="REG_SLR0" Val="838000"/>
+              <Resource Name="REG_SLR1" Val="399008"/>
+              <Resource Name="REG_SLR2" Val="827504"/>
+              <Resource Name="REG_SLR3" Val="864000"/>
+              <Resource Name="URAM" Val="1068"/>
+              <Resource Name="URAM_SLR0" Val="312"/>
+              <Resource Name="URAM_SLR1" Val="128"/>
+              <Resource Name="URAM_SLR2" Val="308"/>
+              <Resource Name="URAM_SLR3" Val="320"/>
+            </PBlock>
+          </AvailableResources>
+        </Core>
+      </Device>
+    </Devices>
+    <Files>
+      <File Type="POST_SYS_LINK_OVERLAY_TCL" Name="tcl_hooks/postlink.tcl"/>
+      <File Type="PRE_CREATE_PROJECT_TCL" Name="tcl_hooks/pre_create_project.tcl"/>
+      <File Type="PRE_OPT_TCL" Name="tcl_hooks/preopt.tcl"/>
+      <File Type="POST_OPT_TCL" Name="tcl_hooks/postopt.tcl"/>
+      <File Type="SYNTH_CONSTRS" Name="tcl_hooks/impl.xdc" UsedIn="implementation" ProcessingOrder="EARLY"/>
+      <File Type="EMU_XML" Name="hw_emu/hw_emu.xml"/>
+      <File Type="EMU_JSON" Name="hw_emu/hw_emu.json"/>
+      <File Type="BB_LOCKED_IMPL_DCP" Name="hw_bb_locked.dcp"/>
+      <File Type="HPFM" Name="hw.hpfm"/>
+      <File Type="DR_BD" Name="bd/202020_1_dev.srcs/sources_1/bd/ulp/ulp.bd"/>
+      <File Type="IP_REPO_PATH" Name="iprepo"/>
+      <File Type="IP_CACHE_DIR" Name="ipcache"/>
+      <File Type="BOARD_REPO_PATH" Name="board"/>
+      <File Type="EXT_META_JSON" Name="ext_metadata.json"/>
+    </Files>
+  </DSA>
+</Root>

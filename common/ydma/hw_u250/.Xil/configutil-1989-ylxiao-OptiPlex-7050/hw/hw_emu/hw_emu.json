@@ -1,0 +1,39 @@
+{
+    "pfm_metadata_version": "2020.2",
+    "emulations": [
+        {
+            "name": "",
+            "files": [
+                {
+                    "type": "TOP_BD",
+                    "name": "pfm_top\/pfm_top.bd"
+                },
+                {
+                    "type": "EMU_DR_BD",
+                    "name": "pfm_dynamic\/pfm_dynamic.bd",
+                    "inst_path": "pfm_top_wrapper\/pfm_top_i\/pfm_dynamic_inst"
+                },
+                {
+                    "type": "EMU_HPFM",
+                    "name": "pfm_dynamic_emu.hpfm"
+                },
+                {
+                    "type": "POST_SYS_LINK_TCL",
+                    "name": "dynamic_postlink.tcl"
+                },
+                {
+                    "type": "PRE_SYS_LINK_TCL",
+                    "name": "dynamic_prelink.tcl"
+                },
+                {
+                    "type": "USER_IP_REPO",
+                    "name": "user_ip_repo"
+                },
+                {
+                    "type": "EXT_METADATA",
+                    "name": ".\/ext_metadata.json"
+                }
+            ]
+        }
+    ]
+}

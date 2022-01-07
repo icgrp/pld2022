@@ -1,0 +1,23 @@
+{
+                "platformData":{
+                 "plp":
+                    {
+                    "ert"               : "enabled",
+                    "ertVersion"        : "30",
+                    "peerToPeer"        : "enabled",     
+                    "dma"               : "xdma",     
+                    "m2m"               : "enabled",
+                    "slaveBridge"       : "enabled",
+                    "numCdma"           : "0",
+                    "ertCmdqBaseAddr"   : "0x008000000000",
+                    "ertBaseAddr"       : "0x0",
+                    "cdmaBaseAddress0"  : "0x0",           
+                    "cdmaBaseAddress1"  : "0x0",            
+                    "cdmaBaseAddress2"  : "0x0",           
+                    "cdmaBaseAddress3"  : "0x0"            
+                  },
+                 "ulp":
+                  {
+                  }
+               }
+           }

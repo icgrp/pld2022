@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!--specifications for pr_flow tool-->
+  <spec name = "PLATFORM_REPO_PATHS" value=  "/scratch/unsafe/Xilinx/platform/xilinx_ultra96_base_dfx_202110_1/" />
+  <spec name = "ROOTFS"              value = "/scratch/unsafe/Xilinx/platform/xilinx_ultra96_base_dfx_202110_1/sw/xilinx_ultra96_base_dfx_202110_1/Petalinux/rootfs" />
+  <spec name = "PLATFORM"            value = "xilinx_ultra96_base_dfx_202110_1" />
+  <spec name = "sdk_dir"             value = "/scratch/unsafe/Xilinx/xilinx-zynqmp-common-v2021.1/ir/environment-setup-cortexa72-cortexa53-xilinx-linux" />
+
+  <spec name = "board"               value = "ultra96" />
+  <spec name = "device"              value = "xczu3_0" />
+  <spec name = "part"                value = "xczu3eg-sbva484-1-e" />
+  <spec name = "inst_name"           value = "pfm_top_i/dynamic_region/ydma_1" />
+  <spec name = "top_name"            value = "pfm_top_wrapper" />
+
+
+  <spec name = "p"                   value = "0.5" />
+  <spec name = "pks"                 value = "49" />
+  <spec name = "nl"                  value = "8" />
+  <spec name = "packet_bits"         value = "49" />
+  <spec name = "addr_bits"           value = "3" />
+ 
+</configuration>

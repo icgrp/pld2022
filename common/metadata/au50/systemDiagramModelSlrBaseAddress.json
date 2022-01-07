@@ -1,0 +1,656 @@
+{
+ "system_diagram_metadata": {
+  "schema_version": {
+   "major": "2",
+   "minor": "0",
+   "patch": "0"
+  },
+  "xsa": {
+   "vendor": "xilinx",
+   "board_id": "u50",
+   "name": "gen3x16_xdma",
+   "version_major": "201920",
+   "version_minor": "3",
+   "description": "\n    This platform targets the Alveo U50 Data Center Accelerator Card. This high-performance acceleration platform features HBM, the expanded partial reconfiguration flow for high fabric resource availability, and Xilinx DMA Subsystem for PCI Express with PCIe Gen3 x16 connectivity.\n  ",
+   "generated_by": {
+    "name": "Vivado",
+    "version": "2019.2",
+    "cl": "2708876",
+    "time_stamp": "Wed Feb 19 10:53:31 2020"
+   },
+   "board": {
+    "name": "xilinx.com:au50:1.0",
+    "vendor": "xilinx.com",
+    "part": "xcu50-fsvh2104-2-e",
+    "board_part": "xilinx.com:au50:part0:1.0"
+   },
+   "available_resources": {
+    "LUT": "871680",
+    "REG": "",
+    "BRAM": "1344",
+    "DSP": "5952",
+    "URAM": ""
+   },
+   "device_topology": [
+    {
+     "id": "0",
+     "type": "Hbm",
+     "used": "yes",
+     "sizeKB": "0x40000",
+     "base_address": "0x0",
+     "tag": "HBM[0]",
+     "slr": "",
+     "spTag": "HBM[0]"
+    },
+    {
+     "id": "1",
+     "type": "Dram",
+     "used": "yes",
+     "sizeKB": "0x40000",
+     "base_address": "0x10000000",
+     "tag": "HBM[1]",
+     "slr": "",
+     "spTag": "HBM[1]"
+    },
+    {
+     "id": "2",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x20000000",
+     "tag": "HBM[2]",
+     "slr": "",
+     "spTag": "HBM[2]"
+    },
+    {
+     "id": "3",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x30000000",
+     "tag": "HBM[3]",
+     "slr": "",
+     "spTag": "HBM[3]"
+    },
+    {
+     "id": "4",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x40000000",
+     "tag": "HBM[4]",
+     "slr": "",
+     "spTag": "HBM[4]"
+    },
+    {
+     "id": "5",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x50000000",
+     "tag": "HBM[5]",
+     "slr": "",
+     "spTag": "HBM[5]"
+    },
+    {
+     "id": "6",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x60000000",
+     "tag": "HBM[6]",
+     "slr": "",
+     "spTag": "HBM[6]"
+    },
+    {
+     "id": "7",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x70000000",
+     "tag": "HBM[7]",
+     "slr": "",
+     "spTag": "HBM[7]"
+    },
+    {
+     "id": "8",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x80000000",
+     "tag": "HBM[8]",
+     "slr": "",
+     "spTag": "HBM[8]"
+    },
+    {
+     "id": "9",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x90000000",
+     "tag": "HBM[9]",
+     "slr": "",
+     "spTag": "HBM[9]"
+    },
+    {
+     "id": "10",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0xa0000000",
+     "tag": "HBM[10]",
+     "slr": "",
+     "spTag": "HBM[10]"
+    },
+    {
+     "id": "11",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0xb0000000",
+     "tag": "HBM[11]",
+     "slr": "",
+     "spTag": "HBM[11]"
+    },
+    {
+     "id": "12",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0xc0000000",
+     "tag": "HBM[12]",
+     "slr": "",
+     "spTag": "HBM[12]"
+    },
+    {
+     "id": "13",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0xd0000000",
+     "tag": "HBM[13]",
+     "slr": "",
+     "spTag": "HBM[13]"
+    },
+    {
+     "id": "14",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0xe0000000",
+     "tag": "HBM[14]",
+     "slr": "",
+     "spTag": "HBM[14]"
+    },
+    {
+     "id": "15",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0xf0000000",
+     "tag": "HBM[15]",
+     "slr": "",
+     "spTag": "HBM[15]"
+    },
+    {
+     "id": "16",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x100000000",
+     "tag": "HBM[16]",
+     "slr": "",
+     "spTag": "HBM[16]"
+    },
+    {
+     "id": "17",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x110000000",
+     "tag": "HBM[17]",
+     "slr": "",
+     "spTag": "HBM[17]"
+    },
+    {
+     "id": "18",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x120000000",
+     "tag": "HBM[18]",
+     "slr": "",
+     "spTag": "HBM[18]"
+    },
+    {
+     "id": "19",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x130000000",
+     "tag": "HBM[19]",
+     "slr": "",
+     "spTag": "HBM[19]"
+    },
+    {
+     "id": "20",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x140000000",
+     "tag": "HBM[20]",
+     "slr": "",
+     "spTag": "HBM[20]"
+    },
+    {
+     "id": "21",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x150000000",
+     "tag": "HBM[21]",
+     "slr": "",
+     "spTag": "HBM[21]"
+    },
+    {
+     "id": "22",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x160000000",
+     "tag": "HBM[22]",
+     "slr": "",
+     "spTag": "HBM[22]"
+    },
+    {
+     "id": "23",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x170000000",
+     "tag": "HBM[23]",
+     "slr": "",
+     "spTag": "HBM[23]"
+    },
+    {
+     "id": "24",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x180000000",
+     "tag": "HBM[24]",
+     "slr": "",
+     "spTag": "HBM[24]"
+    },
+    {
+     "id": "25",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x190000000",
+     "tag": "HBM[25]",
+     "slr": "",
+     "spTag": "HBM[25]"
+    },
+    {
+     "id": "26",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x1a0000000",
+     "tag": "HBM[26]",
+     "slr": "",
+     "spTag": "HBM[26]"
+    },
+    {
+     "id": "27",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x1b0000000",
+     "tag": "HBM[27]",
+     "slr": "",
+     "spTag": "HBM[27]"
+    },
+    {
+     "id": "28",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x1c0000000",
+     "tag": "HBM[28]",
+     "slr": "",
+     "spTag": "HBM[28]"
+    },
+    {
+     "id": "29",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x1d0000000",
+     "tag": "HBM[29]",
+     "slr": "",
+     "spTag": "HBM[29]"
+    },
+    {
+     "id": "30",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x1e0000000",
+     "tag": "HBM[30]",
+     "slr": "",
+     "spTag": "HBM[30]"
+    },
+    {
+     "id": "31",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x40000",
+     "base_address": "0x1f0000000",
+     "tag": "HBM[31]",
+     "slr": "",
+     "spTag": "HBM[31]"
+    },
+    {
+     "id": "32",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x0",
+     "base_address": "0x0",
+     "tag": "PLRAM[0]",
+     "slr": "",
+     "spTag": "PLRAM[0]"
+    },
+    {
+     "id": "33",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x0",
+     "base_address": "0x0",
+     "tag": "PLRAM[1]",
+     "slr": "",
+     "spTag": "PLRAM[1]"
+    },
+    {
+     "id": "34",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x0",
+     "base_address": "0x0",
+     "tag": "PLRAM[2]",
+     "slr": "",
+     "spTag": "PLRAM[2]"
+    },
+    {
+     "id": "35",
+     "type": "Dram",
+     "used": "no",
+     "sizeKB": "0x0",
+     "base_address": "0x0",
+     "tag": "PLRAM[3]",
+     "slr": "",
+     "spTag": "PLRAM[3]"
+    }
+   ],
+   "design_intent": [
+    "dataCenter",
+    "externalHost",
+    "serverManaged"
+   ]
+  },
+  "xclbin": {
+   "generated_by": {
+    "name": "v++",
+    "version": "2021.1",
+    "cl": "3246112",
+    "time_stamp": "2021-06-09-14:19:56",
+    "options": "/opt/Xilinx/Vitis/2021.1/bin/unwrapped/lnx64.o/v++ -l -t hw --config ../src/u50.cfg --kernel_frequency 100 ./ydma.xo -o ydma.xclbin ",
+    "xclbin_name": "ydma",
+    "uuid": "fbc1a2e0-c538-4022-9c09-79d5b7fb1b5d",
+    "link_uuid": "fbc1a2e0-c538-4022-9c09-79d5b7fb1b5d",
+    "package_uuid": "",
+    "system_compile_flow": false
+   },
+   "user_regions": [
+    {
+     "name": "OCL_REGION_0",
+     "type": "clc_region",
+     "instance_path": "level0_i/ulp",
+     "kernels": [
+      {
+       "name": "ydma",
+       "estimated_resources": {
+        "LUT": "127",
+        "REG": "101",
+        "BRAM": "",
+        "DSP": "",
+        "URAM": ""
+       },
+       "ports": [
+        {
+         "name": "M_AXI_AXIMM1",
+         "mode": "master",
+         "range": "0xFFFFFFFF",
+         "data_width": "64",
+         "port_type": "addressable",
+         "base": "0x0",
+         "direction": "DirUnknown"
+        },
+        {
+         "name": "M_AXI_AXIMM2",
+         "mode": "master",
+         "range": "0xFFFFFFFF",
+         "data_width": "32",
+         "port_type": "addressable",
+         "base": "0x0",
+         "direction": "DirUnknown"
+        },
+        {
+         "name": "S_AXI_CONTROL",
+         "mode": "slave",
+         "range": "0x1000",
+         "data_width": "32",
+         "port_type": "addressable",
+         "base": "0x0",
+         "direction": "DirUnknown"
+        }
+       ],
+       "arguments": [
+        {
+         "id": "0",
+         "name": "input1",
+         "address_qualifier": "1",
+         "port": "M_AXI_AXIMM1",
+         "size": "0x8",
+         "offset": "0x10",
+         "host_offset": "0x0",
+         "host_size": "0x8",
+         "type": "void*",
+         "direction": "DirUnknown"
+        },
+        {
+         "id": "1",
+         "name": "input2",
+         "address_qualifier": "1",
+         "port": "M_AXI_AXIMM2",
+         "size": "0x8",
+         "offset": "0x1C",
+         "host_offset": "0x0",
+         "host_size": "0x8",
+         "type": "void*",
+         "direction": "DirUnknown"
+        },
+        {
+         "id": "2",
+         "name": "output1",
+         "address_qualifier": "1",
+         "port": "M_AXI_AXIMM1",
+         "size": "0x8",
+         "offset": "0x28",
+         "host_offset": "0x0",
+         "host_size": "0x8",
+         "type": "void*",
+         "direction": "DirUnknown"
+        },
+        {
+         "id": "3",
+         "name": "output2",
+         "address_qualifier": "1",
+         "port": "M_AXI_AXIMM2",
+         "size": "0x8",
+         "offset": "0x34",
+         "host_offset": "0x0",
+         "host_size": "0x8",
+         "type": "void*",
+         "direction": "DirUnknown"
+        },
+        {
+         "id": "4",
+         "name": "config_size",
+         "address_qualifier": "0",
+         "port": "S_AXI_CONTROL",
+         "size": "0x4",
+         "offset": "0x40",
+         "host_offset": "0x0",
+         "host_size": "0x4",
+         "type": "unsigned int",
+         "direction": "DirUnknown"
+        },
+        {
+         "id": "5",
+         "name": "input_size",
+         "address_qualifier": "0",
+         "port": "S_AXI_CONTROL",
+         "size": "0x4",
+         "offset": "0x48",
+         "host_offset": "0x0",
+         "host_size": "0x4",
+         "type": "unsigned int",
+         "direction": "DirUnknown"
+        },
+        {
+         "id": "6",
+         "name": "output_size",
+         "address_qualifier": "0",
+         "port": "S_AXI_CONTROL",
+         "size": "0x4",
+         "offset": "0x50",
+         "host_offset": "0x0",
+         "host_size": "0x4",
+         "type": "unsigned int",
+         "direction": "DirUnknown"
+        }
+       ]
+      }
+     ],
+     "compute_units": [
+      {
+       "id": "0",
+       "kernel_name": "ydma",
+       "cu_name": "ydma_1",
+       "base_address": "0x1400000",
+       "actual_resources": [
+        {
+         "design_state": "routed",
+         "LUT": "4573",
+         "REG": "6055",
+         "BRAM": "18",
+         "DSP": "0",
+         "URAM": "0"
+        },
+        {
+         "design_state": "synthesized",
+         "LUT": "5127",
+         "REG": "6058",
+         "BRAM": "18",
+         "DSP": "0",
+         "URAM": "0"
+        },
+        {
+         "design_state": "fully_placed",
+         "LUT": "4573",
+         "REG": "6055",
+         "BRAM": "18",
+         "DSP": "0",
+         "URAM": "0"
+        }
+       ]
+      }
+     ],
+     "connectivity": [
+      {
+       "id": "0",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "0",
+        "arg_name": "input1",
+        "mode": "Master"
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": ""
+       }
+      },
+      {
+       "id": "1",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "1",
+        "arg_name": "input2",
+        "mode": "Master"
+       },
+       "node2": {
+        "type": "memory",
+        "id": "1",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": ""
+       }
+      },
+      {
+       "id": "2",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "2",
+        "arg_name": "output1",
+        "mode": "Master"
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": ""
+       }
+      },
+      {
+       "id": "3",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "3",
+        "arg_name": "output2",
+        "mode": "Master"
+       },
+       "node2": {
+        "type": "memory",
+        "id": "1",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": ""
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
+

@@ -1,0 +1,166 @@
+{
+    "schema_version": {
+        "major": "1",
+        "minor": "0",
+        "patch": "0"
+    },
+    "build_metadata": {
+        "dsa": {
+            "vendor": "xilinx",
+            "board_id": "u50",
+            "name": "gen3x16_xdma",
+            "version_major": "201920",
+            "version_minor": "3",
+            "description": "",
+            "generated_by": {
+                "name": "Vivado",
+                "version": "2019.2",
+                "cl": "2708876",
+                "time_stamp": "Wed Feb 19 10:53:31 2020"
+            },
+            "board": {
+                "name": "xilinx.com:au50:1.0",
+                "vendor": "xilinx.com",
+                "part": "xcu50-fsvh2104-2-e",
+                "board_part": "xilinx.com:au50:part0:1.0"
+            },
+            "feature_roms": [
+                {
+                    "time_epoch": "0"
+                }
+            ]
+        },
+        "xclbin": {
+            "generated_by": {
+                "name": "v++",
+                "version": "2021.1",
+                "cl": "3246112",
+                "time_stamp": "2021-06-09-14:19:56",
+                "options": "\/opt\/Xilinx\/Vitis\/2021.1\/bin\/unwrapped\/lnx64.o\/v++ --config ..\/src\/u50.cfg --connectivity.nk ydma:1:ydma_1 --connectivity.sp ydma_1.input1:HBM[0] --connectivity.sp ydma_1.input2:HBM[1] --connectivity.sp ydma_1.output1:HBM[0] --connectivity.sp ydma_1.output2:HBM[1] --debug --input_files .\/ydma.xo --kernel_frequency 100 --link --optimize 0 --output ydma.xclbin --platform xilinx_u50_gen3x16_xdma_201920_3 --profile.data all:all:all --report_level 0 --save-temps --target hw "
+            },
+            "user_regions": [
+                {
+                    "name": "OCL_REGION_0",
+                    "type": "clc_region",
+                    "instance_path": "level0_i\/ulp",
+                    "base_address": "",
+                    "kernels": [
+                        {
+                            "name": "ydma",
+                            "ports": [
+                                {
+                                    "name": "M_AXI_AXIMM1",
+                                    "mode": "master",
+                                    "range": "0xFFFFFFFF",
+                                    "data_width": "64",
+                                    "port_type": "addressable",
+                                    "base": "0x0"
+                                },
+                                {
+                                    "name": "M_AXI_AXIMM2",
+                                    "mode": "master",
+                                    "range": "0xFFFFFFFF",
+                                    "data_width": "32",
+                                    "port_type": "addressable",
+                                    "base": "0x0"
+                                },
+                                {
+                                    "name": "S_AXI_CONTROL",
+                                    "mode": "slave",
+                                    "range": "0x1000",
+                                    "data_width": "32",
+                                    "port_type": "addressable",
+                                    "base": "0x0"
+                                }
+                            ],
+                            "arguments": [
+                                {
+                                    "name": "input1",
+                                    "address_qualifier": "1",
+                                    "id": "0",
+                                    "port": "M_AXI_AXIMM1",
+                                    "size": "0x8",
+                                    "offset": "0x10",
+                                    "host_offset": "0x0",
+                                    "host_size": "0x8",
+                                    "type": "void*"
+                                },
+                                {
+                                    "name": "input2",
+                                    "address_qualifier": "1",
+                                    "id": "1",
+                                    "port": "M_AXI_AXIMM2",
+                                    "size": "0x8",
+                                    "offset": "0x1C",
+                                    "host_offset": "0x0",
+                                    "host_size": "0x8",
+                                    "type": "void*"
+                                },
+                                {
+                                    "name": "output1",
+                                    "address_qualifier": "1",
+                                    "id": "2",
+                                    "port": "M_AXI_AXIMM1",
+                                    "size": "0x8",
+                                    "offset": "0x28",
+                                    "host_offset": "0x0",
+                                    "host_size": "0x8",
+                                    "type": "void*"
+                                },
+                                {
+                                    "name": "output2",
+                                    "address_qualifier": "1",
+                                    "id": "3",
+                                    "port": "M_AXI_AXIMM2",
+                                    "size": "0x8",
+                                    "offset": "0x34",
+                                    "host_offset": "0x0",
+                                    "host_size": "0x8",
+                                    "type": "void*"
+                                },
+                                {
+                                    "name": "config_size",
+                                    "address_qualifier": "0",
+                                    "id": "4",
+                                    "port": "S_AXI_CONTROL",
+                                    "size": "0x4",
+                                    "offset": "0x40",
+                                    "host_offset": "0x0",
+                                    "host_size": "0x4",
+                                    "type": "unsigned int"
+                                },
+                                {
+                                    "name": "input_size",
+                                    "address_qualifier": "0",
+                                    "id": "5",
+                                    "port": "S_AXI_CONTROL",
+                                    "size": "0x4",
+                                    "offset": "0x48",
+                                    "host_offset": "0x0",
+                                    "host_size": "0x4",
+                                    "type": "unsigned int"
+                                },
+                                {
+                                    "name": "output_size",
+                                    "address_qualifier": "0",
+                                    "id": "6",
+                                    "port": "S_AXI_CONTROL",
+                                    "size": "0x4",
+                                    "offset": "0x50",
+                                    "host_offset": "0x0",
+                                    "host_size": "0x4",
+                                    "type": "unsigned int"
+                                }
+                            ],
+                            "instances": [
+                                {
+                                    "name": "ydma_1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

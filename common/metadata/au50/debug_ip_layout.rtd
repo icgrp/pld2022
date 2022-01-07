@@ -1,0 +1,66 @@
+{
+  "schema_version": {
+    "major": "1",
+    "minor": "0",
+    "patch": "0"
+  },
+  "debug_ip_layout": {
+    "m_count": "6",
+    "m_debug_ip_data": [
+      {
+        "m_type": "AXI_MONITOR_FIFO_FULL",
+        "m_index": "0",
+        "m_major": "4",
+        "m_minor": "2",
+        "m_properties": "0",
+        "m_base_address": "0x0201420000",
+        "m_name": "dpa_fifo"
+      },
+      {
+        "m_type": "AXI_MONITOR_FIFO_LITE",
+        "m_index": "0",
+        "m_major": "4",
+        "m_minor": "2",
+        "m_properties": "0",
+        "m_base_address": "0x1800000",
+        "m_name": "dpa_fifo"
+      },
+      {
+        "m_type": "AXI_TRACE_FUNNEL",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0x1810000",
+        "m_name": "dpa_hub"
+      },
+      {
+        "m_type": "ACCEL_MONITOR",
+        "m_index": "64",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "11",
+        "m_base_address": "0x1820000",
+        "m_name": "ydma_1"
+      },
+      {
+        "m_type": "AXI_MM_MONITOR",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "11",
+        "m_base_address": "0x1830000",
+        "m_name": "ydma_1/m_axi_aximm1-HBM[0]"
+      },
+      {
+        "m_type": "AXI_MM_MONITOR",
+        "m_index": "2",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "11",
+        "m_base_address": "0x1840000",
+        "m_name": "ydma_1/m_axi_aximm2-HBM[1]"
+      }
+    ]
+  }
+}

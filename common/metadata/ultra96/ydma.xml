@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ydma">
+  <platform vendor="xilinx" boardid="ultra96" name="dynamic" featureRomTime="0">
+    <version major="0" minor="0"/>
+    <description/>
+    <board name="avnet.com:ultra96v2:1.2" vendor="avnet.com" fpga="xczu3eg-sbva484-1-i">
+      <interfaces/>
+      <memories>
+        <memory name="mem0" type="ddr4" size="2GB"/>
+      </memories>
+      <images>
+        <image name="ultra96v2_top.jpg" type="HDPI"/>
+        <image name="" type="MDPI"/>
+        <image name="" type="LDPI"/>
+      </images>
+      <id>
+        <vendor/>
+        <device/>
+        <subsystem/>
+      </id>
+    </board>
+    <build_flow/>
+    <host architecture="x86_64"/>
+    <device name="fpga0" fpgaDevice="zynquplus:xczu3eg:sbva484:-1:i" addrWidth="0">
+      <core name="OCL_REGION_0" target="bitstream" type="clc_region" clockFreq="0MHz" numComputeUnits="60">
+        <kernelClocks>
+          <clock port="KERNEL_CLK" frequency="300.000000MHz"/>
+          <clock port="DATA_CLK" frequency="150.000000MHz"/>
+        </kernelClocks>
+        <kernel name="ydma" language="c" vlnv="xilinx.com:hls:ydma:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="true" interrupt="true" hwControlProtocol="ap_ctrl_chain">
+          <module name="ydma">
+            <module name="Loop_VITIS_LOOP_31_1_proc1" instName="Loop_VITIS_LOOP_31_1_proc1_U0" type="DataflowHS">
+              <rtlPort name="config_size" object="config_size" protocol="ap_none"/>
+              <rtlPort name="input1" object="input1" protocol="ap_none"/>
+              <rtlPort name="m_axi_aximm1_AWVALID" object="aximm1" protocol="m_axi"/>
+              <module name="Loop_VITIS_LOOP_31_1_proc1_Pipeline_VITIS_LOOP_31_1" instName="grp_Loop_VITIS_LOOP_31_1_proc1_Pipeline_VITIS_LOOP_31_1_fu_72" type="NonDataflowHS">
+                <rtlPort name="m_axi_aximm1_AWVALID" object="aximm1" protocol="m_axi"/>
+                <rtlPort name="sext_ln321_4" object="sext_ln321_4" protocol="ap_none"/>
+                <rtlPort name="config_size" object="config_size" protocol="ap_none"/>
+                <rtlPort name="input1" object="input1" protocol="ap_none"/>
+              </module>
+            </module>
+            <module name="Loop_VITIS_LOOP_35_3_proc3" instName="Loop_VITIS_LOOP_35_3_proc3_U0" type="DataflowHS">
+              <rtlPort name="input_size" object="input_size" protocol="ap_none"/>
+              <rtlPort name="input2" object="input2" protocol="ap_none"/>
+              <rtlPort name="m_axi_aximm2_AWVALID" object="aximm2" protocol="m_axi"/>
+            </module>
+            <module name="entry_proc" instName="entry_proc_U0" type="DataflowHS">
+              <rtlPort name="output1" object="output1" protocol="ap_none"/>
+              <rtlPort name="output2" object="output2" protocol="ap_none"/>
+              <rtlPort name="output_size" object="output_size" protocol="ap_none"/>
+            </module>
+            <module name="Loop_VITIS_LOOP_32_2_proc2" instName="Loop_VITIS_LOOP_32_2_proc2_U0" type="DataflowHS">
+              <rtlPort name="p_read" object="p_read" protocol="ap_none"/>
+              <rtlPort name="m_axi_aximm1_AWVALID" object="aximm1" protocol="m_axi"/>
+              <module name="Loop_VITIS_LOOP_32_2_proc2_Pipeline_VITIS_LOOP_32_2" instName="grp_Loop_VITIS_LOOP_32_2_proc2_Pipeline_VITIS_LOOP_32_2_fu_60" type="NonDataflowHS">
+                <rtlPort name="m_axi_aximm1_AWVALID" object="aximm1" protocol="m_axi"/>
+                <rtlPort name="sext_ln321_3" object="sext_ln321_3" protocol="ap_none"/>
+                <rtlPort name="config_size_load" object="config_size_load" protocol="ap_none"/>
+                <rtlPort name="p_read" object="p_read" protocol="ap_none"/>
+              </module>
+            </module>
+            <module name="Loop_VITIS_LOOP_36_4_proc4" instName="Loop_VITIS_LOOP_36_4_proc4_U0" type="DataflowHS">
+              <rtlPort name="p_read" object="p_read" protocol="ap_none"/>
+              <rtlPort name="p_read1" object="p_read1" protocol="ap_none"/>
+              <rtlPort name="m_axi_aximm2_AWVALID" object="aximm2" protocol="m_axi"/>
+            </module>
+          </module>
+          <port name="M_AXI_AXIMM1" mode="master" range="0xFFFFFFFF" dataWidth="64" portType="addressable" base="0x0"/>
+          <port name="M_AXI_AXIMM2" mode="master" range="0xFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="S_AXI_CONTROL" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <arg name="input1" addressQualifier="1" id="0" port="M_AXI_AXIMM1" size="0x8" offset="0x10" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="input2" addressQualifier="1" id="1" port="M_AXI_AXIMM2" size="0x8" offset="0x1C" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="output1" addressQualifier="1" id="2" port="M_AXI_AXIMM1" size="0x8" offset="0x28" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="output2" addressQualifier="1" id="3" port="M_AXI_AXIMM2" size="0x8" offset="0x34" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="config_size" addressQualifier="0" id="4" port="S_AXI_CONTROL" size="0x4" offset="0x40" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="input_size" addressQualifier="0" id="5" port="S_AXI_CONTROL" size="0x4" offset="0x48" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="output_size" addressQualifier="0" id="6" port="S_AXI_CONTROL" size="0x4" offset="0x50" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <compileWorkGroupSize x="1" y="1" z="1"/>
+          <maxWorkGroupSize x="1" y="1" z="1"/>
+          <string_table/>
+          <instance name="ydma_1">
+            <addrRemap base="0x80810000" range="0x10000" port="S_AXI_CONTROL"/>
+          </instance>
+          <FIFOInformation>
+            <FIFOInst>
+              <Name>v1_buffer_V_U</Name>
+              <ParentInst/>
+              <StaticDepth>256</StaticDepth>
+              <RuntimeDepth>mOutPtr</RuntimeDepth>
+              <InterfaceList>
+                <Interface>clk</Interface>
+                <Interface>reset</Interface>
+                <Interface>if_write</Interface>
+                <Interface>if_din</Interface>
+                <Interface>if_full_n</Interface>
+                <Interface>if_read</Interface>
+                <Interface>if_empty_n</Interface>
+              </InterfaceList>
+            </FIFOInst>
+            <FIFOInst>
+              <Name>v2_buffer_V_U</Name>
+              <ParentInst/>
+              <StaticDepth>1024</StaticDepth>
+              <RuntimeDepth>mOutPtr</RuntimeDepth>
+              <InterfaceList>
+                <Interface>clk</Interface>
+                <Interface>reset</Interface>
+                <Interface>if_write</Interface>
+                <Interface>if_din</Interface>
+                <Interface>if_full_n</Interface>
+                <Interface>if_read</Interface>
+                <Interface>if_empty_n</Interface>
+              </InterfaceList>
+            </FIFOInst>
+          </FIFOInformation>
+        </kernel>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axilite_user_slr1_M01_AXI" dstType="kernel" dstInst="ydma_1" dstPort="S_AXI_CONTROL"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axifull_2_user_slr1_S01_AXI" dstType="kernel" dstInst="ydma_1" dstPort="M_AXI_AXIMM1"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axifull_2_user_slr1_S01_AXI" dstType="kernel" dstInst="ydma_1" dstPort="M_AXI_AXIMM2"/>
+      </core>
+    </device>
+  </platform>
+</project>

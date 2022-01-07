@@ -1,0 +1,401 @@
+{
+   "xclbin" : {
+      "append_sections" : {
+         "partition_metadata" : {
+            "addressable_endpoints" : {
+               "ep_ddr_mem_ctrl_03" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ddr4_ctrl:1.0",
+                  "offset" : "0x0000000000920000"
+               },
+               "ep_aclk_kernel_01" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:clkwiz:1.0",
+                  "offset" : "0x0000000000984000"
+               },
+               "ep_ddr_mem_srsr_ctrl_02" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ddr4_srsr_ctrl:1.0",
+                  "offset" : "0x0000000000950000"
+               },
+               "ep_ddr_mem_ctrl_01" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ddr4_ctrl:1.0",
+                  "offset" : "0x0000000000100000"
+               },
+               "ep_freq_cnt_aclk_kernel_01" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:freq_cnt:1.0",
+                  "offset" : "0x000000000098A000"
+               },
+               "ep_ddr_mem_srsr_ctrl_00" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ddr4_srsr_ctrl:1.0",
+                  "offset" : "0x0000000000940000"
+               },
+               "ep_gapping_demand_00" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ucs_gapping_demand:1.0",
+                  "offset" : "0x0000000000981000"
+               },
+               "ep_aclk_kernel_00" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:clkwiz:1.0",
+                  "offset" : "0x0000000000983000"
+               },
+               "ep_ddr_mem_ctrl_00" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ddr4_ctrl:1.0",
+                  "offset" : "0x0000000000900000"
+               },
+               "ep_freq_cnt_aclk_kernel_00" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:freq_cnt:1.0",
+                  "offset" : "0x0000000000989000"
+               },
+               "ep_debug_bscan_user_00" : {
+                  "pcie_physical_function" : "0x1",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:debug_bridge:1.0",
+                  "offset" : "0x0000000001C00000"
+               },
+               "ep_ucs_control_status_00" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ucs_control_status:1.0",
+                  "offset" : "0x0000000000982000"
+               },
+               "ep_ddr_mem_srsr_ctrl_03" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ddr4_srsr_ctrl:1.0",
+                  "offset" : "0x0000000000960000"
+               },
+               "ep_ddr_mem_ctrl_02" : {
+                  "pcie_physical_function" : "0x0",
+                  "range" : "0x0000000000001000",
+                  "register_abstraction_name" : "xilinx.com:reg_abs:ddr4_ctrl:1.0",
+                  "offset" : "0x0000000000910000"
+               }
+            },
+            "interfaces" : [
+               {
+                  "interface_uuid" : "f2f6c5e1273e78948f2c4806221462f2"
+               }
+            ],
+            "schema_version" : {
+               "minor" : "0",
+               "major" : "1"
+            }
+         },
+         "ip_layout" : {
+            "m_count" : "7",
+            "m_ip_data" : [
+               {
+                  "m_name" : "SRSR-BANK0",
+                  "m_type" : "IP_DDR4_CONTROLLER",
+                  "properties" : "4",
+                  "m_base_address" : "0x000000940000"
+               },
+               {
+                  "m_name" : "SRSR-BANK2",
+                  "m_type" : "IP_DDR4_CONTROLLER",
+                  "properties" : "5",
+                  "m_base_address" : "0x000000950000"
+               },
+               {
+                  "m_name" : "SRSR-BANK3",
+                  "m_type" : "IP_DDR4_CONTROLLER",
+                  "properties" : "6",
+                  "m_base_address" : "0x000000960000"
+               },
+               {
+                  "m_name" : "AXI-LITE-BANK0",
+                  "m_type" : "IP_DDR4_CONTROLLER",
+                  "properties" : "0",
+                  "m_base_address" : "0x000000900000"
+               },
+               {
+                  "m_name" : "AXI-LITE-BANK1",
+                  "m_type" : "IP_DDR4_CONTROLLER",
+                  "properties" : "1",
+                  "m_base_address" : "0x000000100000"
+               },
+               {
+                  "m_name" : "AXI-LITE-BANK2",
+                  "m_type" : "IP_DDR4_CONTROLLER",
+                  "properties" : "2",
+                  "m_base_address" : "0x000000910000"
+               },
+               {
+                  "m_name" : "AXI-LITE-BANK3",
+                  "m_type" : "IP_DDR4_CONTROLLER",
+                  "properties" : "3",
+                  "m_base_address" : "0x000000920000"
+               }
+            ]
+         }
+      }
+   },
+   "raptor2" : {
+      "resources" : {
+         "HOST" : {
+            "M01_AXI_MEM00" : {
+               "slr" : "SLR2",
+               "index" : "0",
+               "mode" : "slave",
+               "sptag" : "HOST",
+               "data_width" : "512",
+               "max_masters" : "15"
+            }
+         },
+         "PLRAM" : {
+            "PLRAM_MEM03" : {
+               "slr" : "SLR3",
+               "index" : "3",
+               "mode" : "slave",
+               "sptag" : "PLRAM",
+               "data_width" : "512",
+               "max_masters" : "15"
+            },
+            "PLRAM_MEM02" : {
+               "slr" : "SLR2",
+               "index" : "2",
+               "mode" : "slave",
+               "sptag" : "PLRAM",
+               "data_width" : "512",
+               "max_masters" : "15"
+            },
+            "PLRAM_MEM01" : {
+               "slr" : "SLR1",
+               "index" : "1",
+               "mode" : "slave",
+               "sptag" : "PLRAM",
+               "data_width" : "512",
+               "max_masters" : "15"
+            },
+            "PLRAM_MEM00" : {
+               "slr" : "SLR0",
+               "index" : "0",
+               "mode" : "slave",
+               "sptag" : "PLRAM",
+               "data_width" : "512",
+               "max_masters" : "15"
+            }
+         },
+         "gts" : {
+            "1" : {
+               "slr_assignment" : "SLR2",
+               "diff_clocks" : [
+                  "io_clk_qsfp_refclka_01",
+                  "io_clk_qsfp_refclkb_01"
+               ],
+               "gt_group_select" : "QUAD_X1Y10",
+               "gt_serial_port" : "io_gt_qsfp_01"
+            },
+            "0" : {
+               "slr_assignment" : "SLR2",
+               "diff_clocks" : [
+                  "io_clk_qsfp_refclka_00",
+                  "io_clk_qsfp_refclkb_00"
+               ],
+               "gt_group_select" : "QUAD_X1Y11",
+               "gt_serial_port" : "io_gt_qsfp_00"
+            }
+         },
+         "DDR" : {
+            "M00_AXI_MEM00" : {
+               "slr" : "SLR1",
+               "index" : "1",
+               "mode" : "slave",
+               "sptag" : "DDR",
+               "data_width" : "512",
+               "max_masters" : "15"
+            },
+            "DDR4_MEM00" : {
+               "slr" : "SLR0",
+               "index" : "0",
+               "mode" : "slave",
+               "sptag" : "DDR",
+               "data_width" : "512",
+               "max_masters" : "15"
+            },
+            "DDR4_MEM02" : {
+               "slr" : "SLR3",
+               "index" : "3",
+               "mode" : "slave",
+               "sptag" : "DDR",
+               "data_width" : "512",
+               "max_masters" : "15"
+            },
+            "DDR4_MEM01" : {
+               "slr" : "SLR2",
+               "index" : "2",
+               "mode" : "slave",
+               "sptag" : "DDR",
+               "data_width" : "512",
+               "max_masters" : "15"
+            }
+         }
+      },
+      "placement" : {
+         "HOST" : {
+            "0" : "SLR2"
+         },
+         "PLRAM" : {
+            "1" : "SLR1",
+            "3" : "SLR3",
+            "0" : "SLR0",
+            "2" : "SLR2"
+         },
+         "DDR" : {
+            "1" : "SLR1",
+            "3" : "SLR3",
+            "0" : "SLR0",
+            "2" : "SLR2"
+         }
+      },
+      "feature_support" : {
+         "software_emulation" : "1",
+         "HOST" : "1",
+         "PLRAM" : "4",
+         "hardware_emulation" : "1",
+         "gts" : 2,
+         "DDR" : "4"
+      },
+      "num_compute_units" : "60",
+      "part" : "xcu250-figd2104-2L-e",
+      "pblocks" : {
+         "pblock_dynamic_region" : {
+            "REG_SLR0" : "838000",
+            "LUT_SLR1" : "199504",
+            "DSPs_SLR1" : "1536",
+            "URAM_SLR1" : "128",
+            "BRAM_SLR2" : "628",
+            "DSPs_SLR3" : "3072",
+            "BRAM_SLR1" : "363",
+            "LUT_SLR3" : "432000",
+            "REG" : "2928512",
+            "BRAM_SLR3" : "672",
+            "BRAM_SLR0" : "650",
+            "URAM" : "1068",
+            "LUT_SLR2" : "413752",
+            "URAM_SLR0" : "312",
+            "DSPs_SLR0" : "3032",
+            "REG_SLR2" : "827504",
+            "LUT" : "1464256",
+            "REG_SLR3" : "864000",
+            "LUT_SLR0" : "419000",
+            "URAM_SLR3" : "320",
+            "DSP" : "10634",
+            "REG_SLR1" : "399008",
+            "DSPs_SLR2" : "2994",
+            "BRAM" : "2313",
+            "URAM_SLR2" : "308"
+         }
+      },
+      "slrs" : [
+         "SLR0",
+         "SLR1",
+         "SLR2",
+         "SLR3"
+      ],
+      "schema_version" : "1.0"
+   },
+   "revision_control" : {
+      "version" : "3.1",
+      "release" : "3233485"
+   },
+   "profile_debug" : {
+      "trace" : {
+         "SLR1" : {
+            "clk" : "ii_level1_wire/ulp_m_aclk_pcie_user_00",
+            "rst" : "ip_psr_aresetn_pcie_slr1/interconnect_aresetn",
+            "mi" : "ict_axi_data_h2c_01/M01_AXI"
+         }
+      },
+      "slrs" : "SLR0 SLR1 SLR2 SLR3",
+      "axilite" : {
+         "SLR2" : {
+            "ip" : "ict_axi_ctrl_user_02",
+            "mi" : "M00_AXI",
+            "fallback" : "false"
+         },
+         "SLR3" : {
+            "ip" : "ict_axi_ctrl_user_03",
+            "mi" : "M00_AXI",
+            "fallback" : "false"
+         },
+         "SLR0" : {
+            "ip" : "ict_axi_ctrl_user_00",
+            "mi" : "M00_AXI",
+            "fallback" : "false"
+         },
+         "SLR1" : {
+            "ip" : "ict_axi_ctrl_user_01",
+            "mi" : "M00_AXI",
+            "fallback" : "true"
+         }
+      },
+      "monitor" : {
+         "SLR2" : {
+            "clk" : "ss_ucs/aclk_kernel_00",
+            "rst" : "ip_psr_aresetn_kernel_00_slr2/interconnect_aresetn",
+            "fallback" : "false"
+         },
+         "SLR3" : {
+            "clk" : "ss_ucs/aclk_kernel_00",
+            "rst" : "ip_psr_aresetn_kernel_00_slr3/interconnect_aresetn",
+            "fallback" : "false"
+         },
+         "SLR0" : {
+            "clk" : "ss_ucs/aclk_kernel_00",
+            "rst" : "ip_psr_aresetn_kernel_00_slr0/interconnect_aresetn",
+            "fallback" : "false"
+         },
+         "SLR1" : {
+            "clk" : "ss_ucs/aclk_kernel_00",
+            "rst" : "ip_psr_aresetn_kernel_00_slr1/interconnect_aresetn",
+            "fallback" : "true"
+         }
+      },
+      "host" : {
+         "SLR2" : "memory_subsystem/S02_AXI",
+         "SLR3" : "memory_subsystem/S03_AXI",
+         "SLR0" : "memory_subsystem/S00_AXI",
+         "SLR1" : "memory_subsystem/S01_AXI"
+      }
+   },
+   "chipscope_debug" : {
+      "debug_networks" : {
+         "user" : {
+            "bar_number" : "0",
+            "supports_jtag_fallback" : "false",
+            "name" : "User Debug Network",
+            "supports_microblaze_debug" : "true",
+            "pcie_pf" : "1",
+            "axi_baseaddr" : "0x000001C00000",
+            "is_user_visible" : "true"
+         },
+         "mgmt" : {
+            "bar_number" : "0",
+            "supports_jtag_fallback" : "true",
+            "name" : "Management Debug Network",
+            "supports_microblaze_debug" : "true",
+            "pcie_pf" : "0",
+            "axi_baseaddr" : "0x01F60000",
+            "is_user_visible" : "false"
+         }
+      }
+   }
+}

@@ -5,7 +5,7 @@ tool, that allows the developers migrate applications from pure software to hydr
 or pure-hardware running on the FPGAs. It provides different options that tradeoff
 compile time with performance as below.
 - -O0: Map all the operators to software cores ([PicoRv32](https://github.com/cliffordwolf/picorv32)).
-- -O1: Map all the operators to DFX regions.
+- -O1: Map all the operators to [DFX](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2021_1/ug909-vivado-partial-reconfiguration.pdf) regions.
 - -O3: Map all the operators as a whole application on pure FPGA fabrics.
  
 PLD is based on Vivado and RISC-V 

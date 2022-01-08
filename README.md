@@ -1,10 +1,11 @@
-# DIRC based on PicoRV32 
+# PLD 
 ## 1 Introduction
-DIRC (**D**ataflow **I**ncremental **R**efinement of **C** code) is a top-level 
+PLD (**P**artition **L**inking and Loa**D**ing on **P**rogrammable **L**ogic **D**evices) is a top-level 
 tool, that allows the developers migrate applications from pure software to hydrid-
-or pure-hardware running on the FPGAs. 
-This is a temporary anonymous repo for DIRC with [picorv32](https://github.com/cliffordwolf/picorv32) support.
-We will release it as an open-source repo if the paper could be accepted.
+or pure-hardware running on the FPGAs. It provides different options that tradeoff
+compile time with performance as below.
+- -O1: 
+
 DIRC is based on Vivado and RISC-V 
 tool chains. When C++ application are developed in the form of dataflow computational 
 graph, DIRC can map streaming operators within the application too a pre-defined 

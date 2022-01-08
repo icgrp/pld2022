@@ -8,19 +8,21 @@ compile time with performance as below.
 - -O1: Map all the operators to [DFX](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2021_1/ug909-vivado-partial-reconfiguration.pdf) regions.
 - -O3: Map all the operators as a whole application on pure FPGA fabrics.
  
-PLD is based on Vivado and RISC-V 
-tool chains. When C++ application are developed in the form of dataflow computational 
-graph, DIRC can map streaming operators within the application too a pre-defined 
+PLD is based on [Vitis](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2021_1/ug1400-vitis-embedded.pdf)
+and [RISC-V tool chains](https://github.com/riscv-collab/riscv-gnu-toolchain).
+When C++ application are developed in the form of dataflow computational 
+graph, PLD can map streaming operators within the application to a pre-defined 
 overlays and performs fast compilation. As an initial functional implementation, 
-DIRC can map the C/C++ applications to RISC-V cores clusters within seconds for 
+PLD can map the C/C++ applications to RISC-V cores clusters within seconds for 
 quick functionality verfication and debugging. After that, the users can change 
-the operators mapping targets by only changing some pragmas, the DIRC can compile 
-only the changed operators in parallel. DIRC can run both on local machine and 
-google cloud platform (GCP). When run DIRC on the local machine, the Makefile 
+the operators mapping targets by only changing some pragmas, the PLD only compiles 
+the changed operators in parallel. PLD can run both on local machine and 
+google cloud platform (GCP). When run PLD on the local machine, the Makefile 
 can explore the maximum parallelism  by the maximum local threads. When running 
-the DIRC on the google cloud platform, we use SLURM as the scheculer to parallel 
-independent compilation jobs. In the following section, we will show you how to 
-use DIRC for incremental development by mapping **Optical Flow** from [Rosetta Benchmark](https://github.com/cornell-zhang/rosetta), 
+the PLD on the google cloud platform, we use (Slurm)[https://cloud.google.com/architecture/deploying-slurm-cluster-compute-engine]
+as the scheculer to parallelize 
+independent compilation jobs. In the following sections, we will show you how to 
+use PLD for incremental development by mapping **Rendering** from [Rosetta Benchmark](https://github.com/cornell-zhang/rosetta), 
 both with local macine and GCP.
 
 ### 1.1 How DIRC works?

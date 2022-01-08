@@ -26,13 +26,12 @@ use PLD for incremental development by mapping **Rendering** from [Rosetta Bench
 both with local macine and [GCP](https://cloud.google.com/).
 
 ### 1.1 How DIRC works?
-To use DIRC to develop the benchmarks, the application code should be written in the form 
+To use PLD to develop the benchmarks, the application code should be written in the form 
 of dataflow graph. We take the optical flow example as below.
 
-![Figure 1: Dataflow Computing Graph for Optical Flow](images/opticalflow_origin.jpg)  
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+![](images/opticalflow_origin.jpg)  
 
-
+Figure 1: Dataflow Computing Graph for Optical Flow
 
 It has 9 operators. Each operator has an individual .cpp and .h file. The Makefile
 will detect wether these .cpp or .h files have been ever changed, and only lauch 

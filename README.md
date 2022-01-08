@@ -4,7 +4,7 @@ PLD (**P**artition **L**inking and Loa**D**ing on **P**rogrammable **L**ogic **D
 tool, that allows the developers migrate applications from pure software to hydrid-
 or pure-hardware running on the FPGAs. It provides different options that tradeoff
 compile time with performance as below.
-- -O0: Map all the operators to software cores ([picorv32](https://github.com/cliffordwolf/picorv32)).
+- -O0: Map all the operators to software cores ([PicoRv32](https://github.com/cliffordwolf/picorv32)).
 - -O1: Map all the operators to DFX regions.
 - -O3: Map all the operators as a whole application on pure FPGA fabrics.
  

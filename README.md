@@ -23,7 +23,7 @@ the PLD on the google cloud platform, we use [Slurm](https://cloud.google.com/ar
 as the scheculer to parallelize 
 independent compilation jobs. In the following sections, we will show you how to 
 use PLD for incremental development by mapping **Rendering** from [Rosetta Benchmark](https://github.com/cornell-zhang/rosetta), 
-both with local macine and GCP.
+both with local macine and [GCP](https://cloud.google.com/).
 
 ### 1.1 How DIRC works?
 To use DIRC to develop the benchmarks, the application code should be written in the form 

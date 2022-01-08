@@ -19,7 +19,7 @@ the operators mapping targets by only changing some pragmas, the PLD only compil
 the changed operators in parallel. PLD can run both on local machine and 
 google cloud platform (GCP). When run PLD on the local machine, the Makefile 
 can explore the maximum parallelism  by the maximum local threads. When running 
-the PLD on the google cloud platform, we use (Slurm)[https://cloud.google.com/architecture/deploying-slurm-cluster-compute-engine]
+the PLD on the google cloud platform, we use [Slurm](https://cloud.google.com/architecture/deploying-slurm-cluster-compute-engine)
 as the scheculer to parallelize 
 independent compilation jobs. In the following sections, we will show you how to 
 use PLD for incremental development by mapping **Rendering** from [Rosetta Benchmark](https://github.com/cornell-zhang/rosetta), 

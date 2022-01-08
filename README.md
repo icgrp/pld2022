@@ -4,9 +4,11 @@ PLD (**P**artition **L**inking and Loa**D**ing on **P**rogrammable **L**ogic **D
 tool, that allows the developers migrate applications from pure software to hydrid-
 or pure-hardware running on the FPGAs. It provides different options that tradeoff
 compile time with performance as below.
-- -O1: 
-
-DIRC is based on Vivado and RISC-V 
+- -O0: Map all the operators to software cores ([picorv32](https://github.com/cliffordwolf/picorv32)).
+- -O1: Map all the operators to DFX regions.
+- -O3: Map all the operators as a whole application on pure FPGA fabrics.
+ 
+PLD is based on Vivado and RISC-V 
 tool chains. When C++ application are developed in the form of dataflow computational 
 graph, DIRC can map streaming operators within the application too a pre-defined 
 overlays and performs fast compilation. As an initial functional implementation, 

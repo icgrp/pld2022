@@ -27,11 +27,11 @@ both with local macine and [GCP](https://cloud.google.com/).
 
 ### 1.1 How DIRC works?
 To use PLD to develop the benchmarks, the application code should be written in the form 
-of dataflow graph. We take the optical flow example as below.
+of dataflow graph. We take the [rendering](input_files/rendering512) example as below.
 
-![](images/opticalflow_origin.jpg)  
+![](images/rendering.jpg)  
 
-Figure 1: Dataflow Computing Graph for Optical Flow
+Figure 1: Dataflow Computing Graph for rendering
 
 It has 9 operators. Each operator has an individual .cpp and .h file. The Makefile
 will detect wether these .cpp or .h files have been ever changed, and only lauch 

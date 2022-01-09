@@ -27,7 +27,7 @@ both with local macine and [GCP](https://cloud.google.com/).
 
 ### 1.1 How DIRC works?
 To use PLD to develop the benchmarks, the application code should be written in the form 
-of dataflow graph. We take the [rendering](input_files/rendering512) example as below.
+of dataflow graph. We take the [rendering](input_src/rendering512) example as below.
 
 ![](images/rendering.jpg)  
 

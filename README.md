@@ -33,10 +33,10 @@ of dataflow graph. We take the [rendering](input_src/rendering512) example as be
 
 Figure 1: Dataflow Computing Graph for rendering
 
-It has 9 operators. Each operator has an individual .cpp and .h file. The Makefile
+It has 7 operators. Each operator has an individual .cpp and .h file. The Makefile
 will detect wether these .cpp or .h files have been ever changed, and only lauch 
 corresponding compilation jobs either locally or on the goole cloud. As the figure
-below, all the 9 operators compilations jobs are idependent and can be performed 
+below, all the 7 operators compilations jobs are idependent and can be performed 
 in parallel. Accroding to the opertor's header file, the operators can be mapped
 to FPGA Fabric or pre-compiled RISC-V cores. As shown in the flow_calc.h Line 3,
 flow_calc operator's target is hardware (HW), the flow_calc.cpp will be compiled

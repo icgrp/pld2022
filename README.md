@@ -58,8 +58,9 @@ compilation. It usually takes around seconds.
 
 
 
-![Figure 2: DIRC Flow and C++ Templete Code](images/DIRC_system.jpg)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+![](images/pld_system.jpg)
+
+Figure 2: DIRC Flow and C++ Templete Code
 
 
 ## 2 Tool Setup

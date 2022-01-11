@@ -263,15 +263,34 @@ several times. We believe this is an error from Xilinx.
 Figure 13: Runtime Error
 
 
+
+
+
+
+
+
+
+## 8 Google Cloud Platform Compilation
+1. You need a goole account to use Google Cloud Platform (GCP) from compilation.
+For personal use, you should have $300 free trial when you register our GCP account.
+2. Click **Console** on the top right, and create a project.
+
+![Figure 17: Console](images/Console.jpg)
+
+
+
+![Figure 18: Create Project](images/create_prj.jpg)
+
+
+
 3. Click **Compute Engine->VM instances**. 
 
 ![Figure 19: See VM Instances](images/VM_inst.jpg)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+
 
 4. For the first time, you may need to enable the API function.
 
 ![Figure 20: Enable API](images/enable_API.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
 
 
 5. [This](https://github.com/SchedMD/slurm-gcp) github repo explains how to set up
@@ -279,35 +298,35 @@ slurm computation clusters. For simplicity, we just use GCP marketplace to creat
 our slurm clusters. Click **Launch**.
 
 ![Figure 21: Create Slurm Project through marketplace](images/market_launch.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+
 
 
 6. Fill out the project names.
 
 ![Figure 22: Specify the Names](images/deployment_name.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+
 
 7. Check **Login External IP** and **Compute Node External IP**.
 
 ![Figure 23: Check External IP Option](images/IP.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+
 
 8. Increase the **Slurm Controller Boot Disk Size** to 400GB.
 
 ![Figure 24: Increase Controller Boot Disk Size](images/controller.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+
 
 9. For **Slurm Compute Partition 1**, you can set **Maximum Instance Count** to 100,
 and **Number of static nodes to create** to 1 for future use.
 
 ![Figure 25: Set Nodes' Features](images/partition1.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+
 
 10. For this tutorial, 1 partition is enough. Click **Deploy**.
 11. Click **Compute Engine->VM instances**. You should see 3 nodes are up (contorller, login0 and compute-0-0).
 
 ![Figure 26: Slurm Nodes](images/nodes.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+
 
 12. Next, we need to install Xilinx Vitis Tool chain on GCP. We recommend to use GUI
 mode to install xilinx tools. We will install the controller node with VNC, so that
@@ -362,7 +381,6 @@ the remote control with ID:root and password you just set. Now you have GUI for
 the controller machine. Install Xilinx Vitis 2020.2 to /apps directory.
 
 ![Figure 27: Log into Controller Machine](images/IP_controller.jpg)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
 
 
 19. After Vitis is installed, you can change the ./common/configure/configure.xml

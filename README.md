@@ -58,7 +58,7 @@ compilation. It usually takes around seconds.
 
 
 
-![](images/pld_system.jpg)
+![](images/pld_system.png)
 
 Figure 2: PLD Flow and C++ Templete Code
 

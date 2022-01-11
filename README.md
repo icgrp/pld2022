@@ -199,16 +199,20 @@ You can also read the report under **./workspace/report**.
 
 Figure 6: Initial Implementation Report
 
-7. Sometimes you may encount an error as below. You do the emulation by launch the **./build_and_run.sh** 
+6. Type ** make run**, you should see the results as below.
+
+![](images/hw_runtime.png)
+
+Figure 8: Hardware Results and Runtime
+
+
+7. Sometimes you may encount an error as below. You do the emulation by launch the **make run** 
 several times. We believe this is an error from Xilinx.
 
-```c
-INFO: Loading 'ydma.xclbin'
-terminate called after throwing an instance of '__gnu_cxx::recursive_init_error'
-terminate called recursively
-  what():  std::exception
-malloc(): memory corruption
-Aborted (core dumped)
+![](images/run_err.png)
+
+Figure 9: Runtime Error
+
 
 ## 7 Tutorial 4: Map all the operators to RISC-V
 1. The 22 partial reconfigurable pages are pre-loaded with one picorc32 cores.
@@ -218,7 +222,7 @@ pre-load 16 RISC-V cores.
 
 ![](images/overlay_riscv.jpg)
 
-Figure 7: Overlay Pre-loaded with RISC-V Cores
+Figure 10: Overlay Pre-loaded with RISC-V Cores
 
 2. We are going to switch '**data_redir**' page to RISC-V. To achieve
 this goal, we only need to avoid downloading any partial bitstreams to
@@ -242,118 +246,21 @@ RISC-V core.
 Type **make report**, you can see the comipile time details in the terminal.
 
 ![](images/report2.png)
-Figure 8: RISC-V Cores Implementation
+Figure 11: RISC-V Cores Implementation
 
 6. Type ** make run**, you should see the results as below.
 
 ![](images/riscv_runtime.png)
 
-Figure 8: RISC-V Results and Runtime
+Figure 12: RISC-V Results and Runtime
 
 
+7. Sometimes you may encount an error as below. You do the emulation by launch the **make run** 
+several times. We believe this is an error from Xilinx.
 
-14. Type '**Make download**' to download the bitstreams into the board,
-and launch the SDK project to run the project. You can see the results
-with one page running on the RISC-V core.
+![](images/run_err.png)
 
-![Figure 14: Initial RISC-V Implementation Results](images/riscv_results.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-
-
-## 7 Tutorial 4: More Debugging Features for RISC-V implementation
-1. We can enable the print features by changing the 
-[./input_src/optical_flow/operators/flow_calc.cpp](./input_src/optical_flow/operators/flow_calc.cpp)
-as below. The **print_str** and **print_dec** are the functions in the RISC-V firmware.
-
-```c
-#ifdef RISCV
-      print_str("r=");
-      print_dec(r);
-      print_str("\n");
-#endif
-```
-
-2. Compile the projects again by steps below.
-
-```
-    # re-compile RISC-V cores
-    make -j$(nproc)
-    make config
-    make download
-```
-
-3. Go back to the SDK projects can re-launch the ARM run. You can see the debugging
-information as below. We can see it takes around 18 seconds to process one rows of
-frames. We will use faster RISC-V cores to accelerate the image processing in the future.
-
-![Figure 15: Printing the Debugging Information](images/debugging.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-
-## 8 Tutorial 5: Map all Operators to Hardware
-
-1. By looking into the **flow_calc** operator in Figure 1, we find the nested 
-loop calculation is suitable for data-parallelism. Especially, **buf[0]**
-and **buf[1]** are completely independent (L24--26).  Therefore, we can 
-split the computation into two operators. 
-Consequently, we can also easily split the upstream 
-operators **tensor_y**, **tensor_x**, **product**, **weight_x**,
- **weight_y** in similar way, so that we can benefit from smaller
-pages to accelerate the compilation time.
-For operators **unpack**, **grad_xy**, **grad_z**, we 
-can see they are small, and  
-we can merge them into one operator without
-harming the performance.
-As we split each operator, we can
-compile it quickly in 2 s and run the split design on the softcore
-processors along with the already FPGA-page-mapped operators to validate
-functionality.  
-After decomposing and merging the operators, we have 16  operators that all fit
-on the pages on our overlay, and the entire design runs on FPGA logic.  
-
-![Figure 16: Final Optical Flow Dataflow Computing Graph](images/opticalflow_final.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-
-3. We have our decomposed C++ code under [./input_src/optical_flow_final/](./input_src/optical_flow_final).
-We can change the project name to **optical_flow_final**.
-
-```c
-prj_name=optical_flow_final
-```
-
-4. Type '**Make -j$(nproc)**'. It will generate all the necessary DCP and 
-bitstream files automatically. Different operators can be compiled in 
-parallel according to the thread number of your local machine. Be carefull
-with the memory requirements, when you use multi-threads to compile the 
-project. When I use 8 threads to compile, I at least need 32 GB DDR 
-memory.
-
-```c
-Make -j$(nproc)
-```
-
-
-
-
-
-
-## 6 Mapping Report
-Type '**Make report**', you can find the compile and resource report under 
-'workspace/report'.
-
-## 7 Google Cloud Platform Compilation
-1. You need a goole account to use Google Cloud Platform (GCP) from compilation.
-For personal use, you should have $300 free trial when you register our GCP account.
-2. Click **Console** on the top right, and create a project.
-
-![Figure 17: Console](images/Console.jpg)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-
-![Figure 18: Create Project](images/create_prj.jpg)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+Figure 13: Runtime Error
 
 
 3. Click **Compute Engine->VM instances**. 

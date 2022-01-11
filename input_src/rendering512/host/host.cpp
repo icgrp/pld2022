@@ -34,6 +34,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <CL/cl2.hpp>
 #include "typedefs.h"
 #include "input_data.h"
+#include <sys/time.h>
+
 
 
 #define CONFIG_SIZE 12
@@ -58,6 +60,8 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;
     }
 
+    // Variables for time measurement
+    struct timeval start, end;
     std::vector<cl::Device> devices;
     cl::Device device;
     std::vector<cl::Platform> platforms;
@@ -191,6 +195,7 @@ int main(int argc, char **argv)
     // Set kernel arguments
 
 
+        gettimeofday(&start, NULL);
 	krnl_ydma.setArg(0, in1_buf);
 	krnl_ydma.setArg(1, in2_buf);
 	krnl_ydma.setArg(2, out1_buf);
@@ -208,7 +213,7 @@ int main(int argc, char **argv)
 
 	// Wait for all scheduled operations to finish
 	q.finish();
-
+        gettimeofday(&end, NULL);
 
     // ------------------------------------------------------------------------------------
     // Step 4: Check Results and Release Allocated Resources
@@ -223,6 +228,11 @@ int main(int argc, char **argv)
     }
     
     delete[] fileBuf;
+
+    // print time
+    long long elapsed = (end.tv_sec - start.tv_sec) * 1000000LL + end.tv_usec - start.tv_usec;   
+    printf("elapsed time: %lld us\n", elapsed);
+
 
     std::cout << "TEST " << (match ? "PASSED" : "FAILED") << std::endl;
     return (match ? EXIT_SUCCESS : EXIT_FAILURE);

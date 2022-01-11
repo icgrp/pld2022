@@ -50,22 +50,5 @@ try:
 
 
 clean:
-	rm -rf ./*.o main
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	rm -rf ./*.o main *.log
 

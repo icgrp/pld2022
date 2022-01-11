@@ -87,12 +87,12 @@ as below.
 ## 3 Benchmark Preparation
 1. To get our [Makefile](./Makefile) to work, you need to copy your application cpp
 code to certain directory. We take 
-**Optial Flow** as an example.
-2. You can create the directory [optical_flow](./input_src) with the same 
+**Rendering** as an example.
+2. You can create the directory [rendering512](./input_src) with the same 
 name as the benchmark under '**./input_src**'.
 3. We create one cpp file and one header file for each operator. In 
-[./input_src/optical_flow/operators](./input_src/optical_flow/operators), we
-can see 9 operators to be mapped to partial reconfigurable pages.
+[./input_src/rendering512/operators](./input_src/rendering512/operators), we
+can see 7 operators to be mapped to partial reconfigurable pages.
 4. We can set the page number and target (HW or RISC-V) in the header file
 for each [operator](input_src/rendering/operators/data_redir_m.h).
 
@@ -100,9 +100,9 @@ for each [operator](input_src/rendering/operators/data_redir_m.h).
     #pragma map_target = HW page_num = 3 inst_mem_size = 65536
 ```
 
-5. Currently, we use a **top** function in [./input_src/optical_flow/host/top.cpp](./input_src/optical_flow/host/top.cpp)
+5. Currently, we use a **top** function in [./input_src/rendering512/host/top.cpp](./input_src/rendering512/host/top.cpp)
 to show how to connect different operators together. Our python script 
-([config.py](./pr_flow/config.py)) will
+([runtime.py](./pr_flow/runtime.py)) will
 parse the top.cpp and operator header files to extract the interconnection,
 and generate the configuration packets.
  

@@ -7,7 +7,8 @@
 
 
 OPERATORS_OBJ=$(addsuffix .o, $(notdir $(basename $(wildcard operators/*.cpp))))
-HOST_OBJ=$(addsuffix .o, $(notdir $(basename $(wildcard host/*.cpp))))
+# HOST_OBJ=$(addsuffix .o, $(notdir $(basename $(wildcard host/*.cpp))))
+HOST_OBJ=main.o top.o
 
 
 
@@ -18,7 +19,7 @@ CXX=g++
 VPATH=src
 
 all: main
-	./main > out.log
+	./main
 
 main:$(OPERATORS_OBJ) $(HOST_OBJ)
 	$(CXX) $(CFLAGS) -o main $^ 
@@ -31,7 +32,7 @@ $(OPERATORS_OBJ):%.o:./operators/%.cpp
 	$(CXX) $(CFLAGS) -o $@ -c $^
 
 run: main
-	./main
+	./main > out.log
 
 install:
 	echo hello

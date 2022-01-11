@@ -25,7 +25,7 @@ independent compilation jobs. In the following sections, we will show you how to
 use PLD for incremental development by mapping **Rendering** from [Rosetta Benchmark](https://github.com/cornell-zhang/rosetta), 
 both with local macine and [GCP](https://cloud.google.com/).
 
-### 1.1 How DIRC works?
+### 1.1 How PLD works?
 To use PLD to develop the benchmarks, the application code should be written in the form 
 of dataflow graph. We take the [rendering](input_src/rendering512) example as below.
 
@@ -60,51 +60,39 @@ compilation. It usually takes around seconds.
 
 ![](images/pld_system.jpg)
 
-Figure 2: DIRC Flow and C++ Templete Code
+Figure 2: PLD Flow and C++ Templete Code
 
 
 ## 2 Tool Setup
 
 ### 2.1 Vitis Preparation
-The demo is developed with [Vitis 2020.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2020-2.html) 
-and [zcu102](https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html).
+The demo is developed with [Vitis 2021.1](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2021-1.html) 
+and [Alveo U50](https://www.xilinx.com/products/boards-and-kits/alveo/u50.html).
 
 
 
 ### 2.2 RISC-V Tool Praparation
 
-The RISC-V toolchain is based on picorv32 repo. You can install the RISC-V toolchain with 
-this commit tag (411d134).
+The RISC-V toolchain is based on [picorv32](https://github.com/YosysHQ/picorv32) repo.
+You can install the RISC-V toolchain from
+the [official website](https://github.com/riscv-collab/riscv-gnu-toolchain).
 We copy the installation guide from [picorv32](https://github.com/cliffordwolf/picorv32) 
 as below.
 
-    # Ubuntu packages needed:
-    sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
-            libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo \
-	    gperf libtool patchutils bc zlib1g-dev git libexpat1-dev
-
-    sudo mkdir /opt/RISC-V32i
-    sudo chown $USER /opt/RISC-V32i
-
-    git clone https://github.com/RISC-V/RISC-V-gnu-toolchain RISC-V-gnu-toolchain-rv32i
-    cd RISC-V-gnu-toolchain-rv32i
-    git checkout 411d134
-    git submodule update --init --recursive
-
-    mkdir build; cd build
-    ../configure --with-arch=rv32i --prefix=/opt/RISC-V32i
-    make -j$(nproc)
-
+    git clone https://github.com/riscv/riscv-gnu-toolchain
+    cd ./riscv-gnu-toolchain
+    ./configure --prefix=/opt/riscv --with-arch=rv32gc --with-abi=ilp32d
+    make
 
 ## 3 Benchmark Preparation
 1. To get our [Makefile](./Makefile) to work, you need to copy your application cpp
 code to certain directory. We take 
-**Optial Flow** as an example.
-2. You can create the directory [optical_flow](./input_src) with the same 
+**Rendering** as an example.
+2. You can create the directory [rendering512](./input_src) with the same 
 name as the benchmark under '**./input_src**'.
 3. We create one cpp file and one header file for each operator. In 
-[./input_src/optical_flow/operators](./input_src/optical_flow/operators), we
-can see 9 operators to be mapped to partial reconfigurable pages.
+[./input_src/rendering512/operators](./input_src/rendering512/operators), we
+can see 7 operators to be mapped to partial reconfigurable pages.
 4. We can set the page number and target (HW or RISC-V) in the header file
 for each [operator](input_src/rendering/operators/data_redir_m.h).
 
@@ -112,20 +100,20 @@ for each [operator](input_src/rendering/operators/data_redir_m.h).
     #pragma map_target = HW page_num = 3 inst_mem_size = 65536
 ```
 
-5. Currently, we use a **top** function in [./input_src/optical_flow/host/top.cpp](./input_src/optical_flow/host/top.cpp)
+5. Currently, we use a **top** function in [./input_src/rendering512/host/top.cpp](./input_src/rendering512/host/top.cpp)
 to show how to connect different operators together. Our python script 
-([config.py](./pr_flow/config.py)) will
+([runtime.py](./pr_flow/runtime.py)) will
 parse the top.cpp and operator header files to extract the interconnection,
 and generate the configuration packets.
  
 
 ## 4 Tutorial 1: Local C Simulation
-1. We can start from the local C++ code. Go to [./input_src/optical_flow](./input_src/optical_flow).
-2. In the [Makefile](./input_src/optical_flow/Makefile), we need to modify the 
+1. We can start from the local C++ code. Go to [./input_src/rendering512](./input_src/rendering512).
+2. In the [Makefile](./input_src/rendering512/Makefile), we need to modify the 
 include path, which corresponds to the your installation path.
 
 ```c
-INCLUDE=-I /opt/Xilinx/Vivado/2018.2/include 
+INCLUDE=-I /opt/Xilinx/Vivado/2021.1/include 
 ```
 
 3. type **make** do simulate the source C++ code with gcc. You should see the results as below.

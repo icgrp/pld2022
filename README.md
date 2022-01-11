@@ -107,7 +107,7 @@ parse the top.cpp and operator header files to extract the interconnection,
 and generate the configuration packets.
  
 
-## 4 Tutorial 1: Local C Simulation
+## 4 Tutorial 1: X86 C++ Simulation
 1. We can start from the local C++ code. Go to [./input_src/rendering512](./input_src/rendering512).
 2. In the [Makefile](./input_src/rendering512/Makefile), we need to modify the 
 include path, which corresponds to the your installation path.
@@ -119,7 +119,8 @@ INCLUDE=-I /opt/Xilinx/Vivado/2021.1/include
 3. type **make** do simulate the source C++ code with gcc. You should see the results as below.
 
 ![](images/rendering_res.png)
-Figure 3: C++ Simulation in the Terminal
+
+Figure 3: C++ Simulation on X86 machines
 
 
 ## 5 Tutorial 2: Initial Hardware Implementation

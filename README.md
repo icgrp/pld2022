@@ -58,7 +58,7 @@ compilation. It usually takes around seconds.
 
 
 
-![](images/pld_system.png)
+![](images/pld_system.jpg)
 
 Figure 2: PLD Flow and C++ Templete Code
 
@@ -118,7 +118,7 @@ INCLUDE=-I /opt/Xilinx/Vivado/2021.1/include
 
 3. type **make** do simulate the source C++ code with gcc. You should see the results as below.
 
-![](images/rendering_res.jpg)
+![](images/rendering_res.png)
 Figure 3: C++ Simulation in the Terminal
 
 

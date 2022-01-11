@@ -177,22 +177,22 @@ the vivado installtion diretory in
 [./common/configure/configure.xml](./common/configure/configure.xml).
 
 ```c
-  <spec name = "Xilinx_dir" value = "/opt/Xilinx/Vivado/2018.2/settings64.sh" />
+  <spec name = "Xilinx_dir" value = "/opt/Xilinx/Vivado/2021.1/settings64.sh" />
 ```
 
-4. In the [Makefile](./Makefile), change the **prj_name** to **optical_flow**.
+4. In the [Makefile](./Makefile), change the **prj_name** to **rendering512**.
 
 ```c
-    prj_name=optical_flow
+    prj_name=rendering512
 ```
 
 5. Now we are ready to launch the first hardware implementation trial. Type 
 **make -j$(nproc)** to take advantage of multi-threads of your local CPU.
 However, you need to have enough DDR memory to explore the parallel compilation.
-The safe ratio between DDR memory and CPU threads is 4 GBs/threads. For example, 
-if you have 8 threads-CPU, the safe DDR memory size is around 32 GBs. 
+The safe ratio between DDR memory and CPU threads is 8 GBs/threads. For example, 
+if you have 8 threads-CPU, the safe DDR memory size is around 64 GBs. 
 
-6. After all the compilations are done, we can see one of the pages (flow_calc) 
+6. After all the compilations are done, we can see one of the pages (data_redir) 
 consumes 56,683 LUTs, and is too big 
 to be mapped. By typing **make report**, you can see the detailed implementation information in the terminal.
 You can also read the report under **./workspace/report**.

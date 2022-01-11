@@ -192,9 +192,7 @@ However, you need to have enough DDR memory to explore the parallel compilation.
 The safe ratio between DDR memory and CPU threads is 8 GBs/threads. For example, 
 if you have 8 threads-CPU, the safe DDR memory size is around 64 GBs. 
 
-6. After all the compilations are done, we can see one of the pages (data_redir) 
-consumes 56,683 LUTs, and is too big 
-to be mapped. By typing **make report**, you can see the detailed implementation information in the terminal.
+6. After all the compilations are done, we can see the detailed implementation information in the terminal.
 You can also read the report under **./workspace/report**.
 
 ![](images/report1.png)
@@ -203,17 +201,15 @@ Figure 6: Initial Implementation Report
 
 
 
-
-
-
-## 6 Tutorial 3: Map all the operators to RISC-V
-1. The 20 partial reconfigurable pages are pre-loaded with one picorc32 cores.
+## 7 Tutorial 4: Map all the operators to RISC-V
+1. The 22 partial reconfigurable pages are pre-loaded with one picorc32 cores.
 To make sure the RISC-V core can run 'ap_int.h' and 'ap_fixed.h', the 
-smallest bram size it 65536 Bytes. We could easily map 9 opertors out of 20
+smallest bram size it 65536 Bytes. We could easily map 9 opertors out of 22
 pre-load 16 RISC-V cores.
 
-![Figure 6: Overlay Pre-loaded with RISC-V Cores](images/overlay_riscv.jpg)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+![](images/overlay_riscv.jpg)
+
+Figure 7: Overlay Pre-loaded with RISC-V Cores
 
 2. We are going to switch '**data_redir**' page to RISC-V. To achieve
 this goal, we only need to avoid downloading any partial bitstreams to

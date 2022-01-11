@@ -118,8 +118,8 @@ INCLUDE=-I /opt/Xilinx/Vivado/2021.1/include
 
 3. type **make** do simulate the source C++ code with gcc. You should see the results as below.
 
-![Figure 3: C++ Simulation in the Terminal](images/c_simulation.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+![](images/rendering_res.jpg)
+Figure 3: C++ Simulation in the Terminal
 
 
 ## 5 Tutorial 2: Initial Hardware Implementation

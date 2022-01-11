@@ -199,7 +199,16 @@ You can also read the report under **./workspace/report**.
 
 Figure 6: Initial Implementation Report
 
+7. Sometimes you may encount an error as below. You do the emulation by launch the **./build_and_run.sh** 
+several times. We believe this is an error from Xilinx.
 
+```c
+INFO: Loading 'ydma.xclbin'
+terminate called after throwing an instance of '__gnu_cxx::recursive_init_error'
+terminate called recursively
+  what():  std::exception
+malloc(): memory corruption
+Aborted (core dumped)
 
 ## 7 Tutorial 4: Map all the operators to RISC-V
 1. The 22 partial reconfigurable pages are pre-loaded with one picorc32 cores.
@@ -237,7 +246,7 @@ Figure 8: RISC-V Cores Implementation
 
 6. Type ** make run**, you should see the results as below.
 
-![](images/riscv_run.png)
+![](images/riscv_runtime.png)
 
 Figure 8: RISC-V Results and Runtime
 

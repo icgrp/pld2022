@@ -67,7 +67,7 @@ Figure 2: PLD Flow and C++ Templete Code
 
 ### 2.1 Vitis Preparation
 The demo is developed with [Vitis 2021.1](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2021-1.html) 
-and [zcu102](https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html).
+and [Alveo U50](https://www.xilinx.com/products/boards-and-kits/alveo/u50.html).
 
 
 

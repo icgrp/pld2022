@@ -108,12 +108,12 @@ and generate the configuration packets.
  
 
 ## 4 Tutorial 1: Local C Simulation
-1. We can start from the local C++ code. Go to [./input_src/optical_flow](./input_src/optical_flow).
-2. In the [Makefile](./input_src/optical_flow/Makefile), we need to modify the 
+1. We can start from the local C++ code. Go to [./input_src/rendering512](./input_src/rendering512).
+2. In the [Makefile](./input_src/rendering512/Makefile), we need to modify the 
 include path, which corresponds to the your installation path.
 
 ```c
-INCLUDE=-I /opt/Xilinx/Vivado/2018.2/include 
+INCLUDE=-I /opt/Xilinx/Vivado/2021.1/include 
 ```
 
 3. type **make** do simulate the source C++ code with gcc. You should see the results as below.

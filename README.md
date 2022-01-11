@@ -25,7 +25,7 @@ independent compilation jobs. In the following sections, we will show you how to
 use PLD for incremental development by mapping **Rendering** from [Rosetta Benchmark](https://github.com/cornell-zhang/rosetta), 
 both with local macine and [GCP](https://cloud.google.com/).
 
-### 1.1 How DIRC works?
+### 1.1 How PLD works?
 To use PLD to develop the benchmarks, the application code should be written in the form 
 of dataflow graph. We take the [rendering](input_src/rendering512) example as below.
 
@@ -60,13 +60,13 @@ compilation. It usually takes around seconds.
 
 ![](images/pld_system.jpg)
 
-Figure 2: DIRC Flow and C++ Templete Code
+Figure 2: PLD Flow and C++ Templete Code
 
 
 ## 2 Tool Setup
 
 ### 2.1 Vitis Preparation
-The demo is developed with [Vitis 2020.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2020-2.html) 
+The demo is developed with [Vitis 2021.1](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2021-1.html) 
 and [zcu102](https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html).
 
 

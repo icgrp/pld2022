@@ -73,8 +73,9 @@ and [Alveo U50](https://www.xilinx.com/products/boards-and-kits/alveo/u50.html).
 
 ### 2.2 RISC-V Tool Praparation
 
-The RISC-V toolchain is based on picorv32 repo. You can install the RISC-V toolchain with 
-this commit tag (411d134).
+The RISC-V toolchain is based on [picorv32](https://github.com/YosysHQ/picorv32) repo.
+You can install the RISC-V toolchain from
+the [official website](https://github.com/riscv-collab/riscv-gnu-toolchain).
 We copy the installation guide from [picorv32](https://github.com/cliffordwolf/picorv32) 
 as below.
 

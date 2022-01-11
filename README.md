@@ -107,7 +107,7 @@ parse the top.cpp and operator header files to extract the interconnection,
 and generate the configuration packets.
  
 
-## 4 Tutorial 1: X86 C++ Simulation
+## 4 Tutorial 1: C++ Simulation on host X86 computer
 1. We can start from the local C++ code. Go to [./input_src/rendering512](./input_src/rendering512).
 2. In the [Makefile](./input_src/rendering512/Makefile), we need to modify the 
 include path, which corresponds to the your installation path.
@@ -120,7 +120,36 @@ INCLUDE=-I /opt/Xilinx/Vivado/2021.1/include
 
 ![](images/rendering_res.png)
 
-Figure 3: C++ Simulation on X86 machines
+Figure 3: C++ Simulation on the X86 machine
+
+
+## 4 Tutorial 2: Vitis C++ Emulation on host X86 computer
+1. We can start from the local C++ code. Go to [./input_src/rendering512/sw_emu](./input_src/rendering512/sw_emu).
+2. In the [build_and_run.sh](./input_src/rendering512/sw_emu/build_and_run.sh), we need to modify the 
+include path, which corresponds to the your installation path.
+
+```c
+source /opt/Xilinx/Vitis/2021.1/settings64.sh
+source /opt/xilinx/xrt/setup.sh
+```
+
+3. type **./build_and_run.sh** do the emulation with Vitis. You should see the results as below.
+
+![](images/rendering_emu.png)
+
+Figure 4: C++ Emulation on the X86 machine
+
+4. Sometimes you may encour an error as below. You do the emulation by launch the **./build_and_run.sh** 
+several times. We believe this is an error from Xilinx.
+
+```c
+INFO: Loading 'ydma.xclbin'
+terminate called after throwing an instance of '__gnu_cxx::recursive_init_error'
+terminate called recursively
+  what():  std::exception
+malloc(): memory corruption
+Aborted (core dumped)
+```
 
 
 ## 5 Tutorial 2: Initial Hardware Implementation

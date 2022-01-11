@@ -232,8 +232,8 @@ RISC-V core.
 5. By typing **make -j$(nproc)**, the RISC-V elf file will be compiled automatically.
 Type **make report**, you can see the comipile time details in the terminal.
 
-![Figure 7: RISC-V Cores Implementation](images/report2.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+![](images/report2.png)
+Figure 8: RISC-V Cores Implementation
 
 6. As all the RISC-V ELF files are ready, we can launch the soft-run with Xilinx SDK. 
 

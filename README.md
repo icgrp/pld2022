@@ -38,21 +38,21 @@ will detect wether these .cpp or .h files have been ever changed, and only lauch
 corresponding compilation jobs either locally or on the goole cloud. As the figure
 below, all the 7 operators compilations jobs are idependent and can be performed 
 in parallel. Accroding to the opertor's header file, the operators can be mapped
-to FPGA Fabric or pre-compiled RISC-V cores. As shown in the flow_calc.h Line 3,
-flow_calc operator's target is hardware (HW), the flow_calc.cpp will be compiled
-by the Vivado_HLS to generate the verilog files. Out-of_context synthesis can compile
-the Verilog files into DCP files. The overlay is pre-compiled DCP, which are
-equipped with RISC-V cores on all the Partical Reconfigurable pages. It obay the 
+to FPGA Fabric or pre-compiled RISC-V cores. As shown in the data_transfer.h Line 3,
+data_transfer operator's target is hardware (HW), the data_transfer.cpp will be compiled
+by the Vitis_HLS to generate the verilog files. Out-of_context synthesis can compile
+the Verilog files to DCP files. The overlay is pre-compiled DCP, which are
+equipped with RISC-V cores on all the Partical Reconfigurable pages. It obays the 
 normal partial reconfigration flow from Xilinx. After the overlay is implemented
 (Placed and routed), we empty the paritial reconfigurable pages out, and store the 
 corresponding bitstreams as a RISC-V library. 
 
 If the operator target HW, the pragam direvative p_num can specify which leaf to 
-map (flow_cal.h L3). The overlay will first be loaded, and fill in the target 
+map (data_transfer.h L3). The overlay will first be loaded, and fill in the target 
 leaf with the flow_calc.dcp and do the placement and routing under the context of
 the overlay. After that, the partial bitstream will be generated.
 
-If the operator taget is riscv, the tersor_x.cpp will be passed through RISC-V
+If the operator taget is RISCV, the data_redir.cpp will be passed through RISC-V
 tool chain and generate the ELF (Executable and Linkage File) without any hardware
 compilation. It usually takes around seconds.    
 

@@ -197,8 +197,9 @@ consumes 56,683 LUTs, and is too big
 to be mapped. By typing **make report**, you can see the detailed implementation information in the terminal.
 You can also read the report under **./workspace/report**.
 
-![Figure 5: Initial Implementation Report](images/report1.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+![](images/report1.png)
+
+Figure 6: Initial Implementation Report
 
 
 

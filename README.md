@@ -160,6 +160,18 @@ to hardware page.
 page, but currently, no hardware implementation details are available.
 The overlay size is as below.
 
+Table 1: Overlay Resouce Distribution
+|  Transfer Size |  SW stream |  HW Stream |
+|:--------------:|:----------:|:----------:|
+|  8192 Bytes    | 130.9 MB/s |79.2 MB/s   |
+|  12368 Bytes   | 133.9 MB/s |80.4 MB/s   |
+|  16384 Bytes   | 135.0 MB/s |83.0 MB/s   |
+|  40960 Bytes   | 137.0 MB/s |86.9 MB/s   |
+|  81920 Bytes   | 137.9 MB/s |87.9 MB/s   |
+|  819200 Bytes  | 138.5 MB/s |89.2 MB/s   |
+| 1638400 Bytes  | 138.5 MB/s |90.4 MB/s   |
+| 6553600 Bytes  | 138.5 MB/s |91.0 MB/s   |
+
 ![](images/overlay_HW.jpg)
 Figure 5: Hardware Overlay Details
 

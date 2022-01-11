@@ -139,7 +139,7 @@ source /opt/xilinx/xrt/setup.sh
 
 Figure 4: C++ Emulation on the X86 machine
 
-4. Sometimes you may encour an error as below. You do the emulation by launch the **./build_and_run.sh** 
+4. Sometimes you may encount an error as below. You do the emulation by launch the **./build_and_run.sh** 
 several times. We believe this is an error from Xilinx.
 
 ```c

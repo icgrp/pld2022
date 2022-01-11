@@ -123,7 +123,7 @@ INCLUDE=-I /opt/Xilinx/Vivado/2021.1/include
 Figure 3: C++ Simulation on the X86 machine
 
 
-## 4 Tutorial 2: Vitis C++ Emulation on host X86 computer
+## 5 Tutorial 2: Vitis C++ Emulation on host X86 computer
 1. We can start from the local C++ code. Go to [./input_src/rendering512/sw_emu](./input_src/rendering512/sw_emu).
 2. In the [build_and_run.sh](./input_src/rendering512/sw_emu/build_and_run.sh), we need to modify the 
 include path, which corresponds to the your installation path.
@@ -152,16 +152,16 @@ Aborted (core dumped)
 ```
 
 
-## 5 Tutorial 2: Initial Hardware Implementation
-1. After the C++ implementation, we will launch our first trial to map the 9 operators
+## 6 Tutorial 3: Initial Hardware Implementation
+1. After the C++ implementation, we will launch our first trial to map the 7 operators
 to hardware page.
 
 2. Type **make report**, you can see the each operator is mapped to one physical 
 page, but currently, no hardware implementation details are available.
 The overlay size is as below.
 
-![Figure 4: Hardware Overlay Details](images/overlay_HW.jpg)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+![](images/overlay_HW.jpg)
+Figure 5: Hardware Overlay Details
 
 3. As you set the vivado properly, we need to set the **Xilinx_dir**, which represents
 the vivado installtion diretory in 

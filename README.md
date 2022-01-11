@@ -79,23 +79,10 @@ the [official website](https://github.com/riscv-collab/riscv-gnu-toolchain).
 We copy the installation guide from [picorv32](https://github.com/cliffordwolf/picorv32) 
 as below.
 
-    # Ubuntu packages needed:
-    sudo apt-get install autoconf automake autotools-dev curl libmpc-dev \
-            libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo \
-	    gperf libtool patchutils bc zlib1g-dev git libexpat1-dev
-
-    sudo mkdir /opt/RISC-V32i
-    sudo chown $USER /opt/RISC-V32i
-
-    git clone https://github.com/RISC-V/RISC-V-gnu-toolchain RISC-V-gnu-toolchain-rv32i
-    cd RISC-V-gnu-toolchain-rv32i
-    git checkout 411d134
-    git submodule update --init --recursive
-
-    mkdir build; cd build
-    ../configure --with-arch=rv32i --prefix=/opt/RISC-V32i
-    make -j$(nproc)
-
+    git clone https://github.com/riscv/riscv-gnu-toolchain
+    cd ./riscv-gnu-toolchain
+    ./configure --prefix=/opt/riscv --with-arch=rv32gc --with-abi=ilp32d
+    make
 
 ## 3 Benchmark Preparation
 1. To get our [Makefile](./Makefile) to work, you need to copy your application cpp

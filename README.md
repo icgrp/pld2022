@@ -235,49 +235,11 @@ Type **make report**, you can see the comipile time details in the terminal.
 ![](images/report2.png)
 Figure 8: RISC-V Cores Implementation
 
-6. As all the RISC-V ELF files are ready, we can launch the soft-run with Xilinx SDK. 
+6. Type ** make run**, you should see the results as below.
 
-```c
-    # copy the hdf file to specific dir:
-    mkdir -p ./workspace/sdk
-    cp ./common/overlay/floorplan_static_wrapper.hdf ./workspace/sdk/
-```
+![](images/riscv_run.png)
 
-7. Launch sdk 2018.2, specify the workspace directory to the DIR with the 'floorplan_static_wrapper.hdf'
-as below.
-
-![Figure 8: SDK Workspace Directory](images/sdk_dir.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-8. Create an application projets as below.
-
-![Figure 9: Create SDK Projects](images/create_prj.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-9. Click **new** to specify the hdf file.
-
-![Figure 10: Link the Right Hardware Platform](images/hdf.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-10. Click **new** to specify the hdf file directory as below.
-
-![Figure 11: Link the Right Path](images/hdf_dir.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-11. Create the application with the same name as the benchmark.
-
-![Figure 12: Choose the Right Application Name](images/sdk_prj_name.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
-
-12. Type '**Make config**", the instr_data will make copied to Vitis project,
-and the cpp source will also be updated.
-
-13. Fresh the source files. If you set the sdk application projets with the right
-direcotry and name, you should see the source files are updated automatically by 
-previous step.
-
-![Figure 13: Refresh the Source Code](images/refresh.png)
-*(These images aren't coming up inline in the anonymizer; click on the link text to see the image.)*
+Figure 8: RISC-V Results and Runtime
 
 
 

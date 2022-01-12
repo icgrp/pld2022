@@ -54,7 +54,7 @@ class overlay(gen_basic):
                 ]
     self.shell.write_lines(self.overlay_dir+'/dummy_repo/'+fun_name+'/dummy.tcl', self.tcl.return_syn_page_tcl_list(fun_name, file_list))
     self.shell.write_lines(self.overlay_dir+'/dummy_repo/'+fun_name+'/run.sh',      self.shell.return_run_sh_list(self.prflow_params['Xilinx_dir'], 'dummy.tcl', self.prflow_params['back_end']), True)
-    self.shell.write_lines(self.overlay_dir+'/dummy_repo/'+fun_name+'/'+'leaf.v', self.verilog.return_page_v_list(0, fun_name, 1, 1, True))
+    # self.shell.write_lines(self.overlay_dir+'/dummy_repo/'+fun_name+'/'+'leaf.v', self.verilog.return_page_v_list(0, fun_name, 1, 1, True))
     
     # temporarily only copy the synthesis files for RISC-V core syntheis
     # We use this RISC-V post-syn dcp to pre-load somes pages.
@@ -111,7 +111,7 @@ class overlay(gen_basic):
                                                        self.prflow_params['grid'],  \
                                                        self.prflow_params['email'], \
                                                        self.prflow_params['mem'],  \
-                                                       '8'), True)
+                                                       self.prflow_params['node']), True)
                                                        #self.prflow_params['node']), True)
 
   def update_cad_path(self):
@@ -122,6 +122,24 @@ class overlay(gen_basic):
       self.shell.replace_lines(self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh', {'sdk_dir'            : 'source '+self.prflow_params['sdk_dir']})
       self.shell.replace_lines(self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh', {'Xilinx_dir'         : 'source '+self.prflow_params['Xilinx_dir']})
       self.shell.replace_lines(self.overlay_dir+'/ydma/src/'+self.prflow_params['board']+'_dfx.cfg', {'platform'         : 'platform='+self.prflow_params['PLATFORM']})
+      os.system('chmod +x '+self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh')
+
+  def update_build_sh(self):
+      cwd = os.getcwd()
+      cwd = cwd.replace('/', '\/')
+      cwd += '\/workspace\/F001_overlay\/ydma\/'+self.prflow_params['board']
+      str_line=''
+      str_line+='make ydma.xo || true\n'
+      str_line+='# abs_dir=$(pwd)\n'
+      # str_line+='python3 ./replace.py\n'
+      str_line+='cd ./_x/ydma/ydma/ydma/solution/impl/ip/ \n'
+      str_line+='sed -i \'s/set kernel_xo ""/set kernel_xo "'+cwd+'\/ydma.xo"/g\' run_ippack.tcl\n'
+      str_line+='sed -i \'s/2201/2101/g\' run_ippack.tcl\n'
+      str_line+='./pack.sh\n'
+      str_line+='cd -\n'
+      str_line+='make ydma.xclbin\n'
+      self.shell.replace_lines(self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh', {'make all': str_line}) 
+      self.shell.replace_lines(self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/Makefile', {'kernel_frequency': '                 --kernel_frequency '+self.prflow_params['pr_freq_MHz']+' \\'}) 
       os.system('chmod +x '+self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh')
 
 
@@ -157,5 +175,6 @@ class overlay(gen_basic):
     # implementations for different pages
     self.shell.re_mkdir(self.overlay_dir+'/riscv_bit_lib')
 
+    self.update_build_sh()
 
 

@@ -36,7 +36,7 @@ class hls(gen_basic):
     self.shell.write_lines(self.hls_dir+'/main_'+fun_name+'.sh', self.shell.return_main_sh_list(
                                                                                                   './run_'+fun_name+'.sh', 
                                                                                                   self.prflow_params['back_end'], 
-                                                                                                  'NONE', 
+                                                                                                  'overlay', 
                                                                                                   'hls_'+fun_name, 
                                                                                                   self.prflow_params['grid'], 
                                                                                                   'qsub@qsub.com',

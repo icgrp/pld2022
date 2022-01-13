@@ -1,5 +1,5 @@
 // color the frame buffer
-void coloringFB_top_m(
+void coloringFB_top_m14(
 		hls::stream<ap_uint<32> > & Input_1,
 		hls::stream<ap_uint<128> > & Input_2,
 		hls::stream<ap_uint<512> > & Output_1);

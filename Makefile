@@ -8,13 +8,13 @@
 #prj_name=datamover
 #prj_name=rendering512
 #prj_name=rendering_explore
-#prj_name=digit_reg512
+prj_name=digit_reg512
 #prj_name=bnn512
 #prj_name=bnn1
 #prj_name=face_detection512
 #prj_name=spam_filter512
 #prj_name=spam_filter512_old
-prj_name=optical_flow512
+#prj_name=optical_flow512
 #prj_name=optical_flow512_debug
 
 src=./common/verilog_src

@@ -5,7 +5,6 @@ import os
 import subprocess
 import xml.etree.ElementTree
 import re
-import commands
 
 
 
@@ -61,7 +60,7 @@ class _shell:
       file_in.close()
       os.system('mv '+filename+'tmp '+filename)
     except:
-      print "Modification for "+filename+" failed!"
+      print ("Modification for "+filename+" failed!")
 
   def add_lines(self, filename, anchor, lines_list):
   # add more lines in a file according to
@@ -77,7 +76,7 @@ class _shell:
       file_in.close()
       os.system('mv '+filename+'tmp '+filename)
     except:
-      print "Adding more line in "+filename+" failed!"
+      print ("Adding more line in "+filename+" failed!")
 
   def write_lines(self, filename, lines_list, executable=False, write_or_add='w'):
     try:
@@ -87,7 +86,7 @@ class _shell:
       if executable == True:
          os.system('chmod +x ' + filename)
     except:
-      print "Writing "+filename+" failed!"
+      print ("Writing "+filename+" failed!")
 
   def re_mkdir(self, dir_name):
      os.system('rm -rf ' + dir_name)
@@ -431,7 +430,7 @@ class _tcl:
       ''])
 
   def return_syn2bits_tcl_list(self, jobs=8, prj_dir='./prj/', prj_name = 'floorplan_static'):
-    threads_num = commands.getoutput("nproc")
+    threads_num = subprocess.getoutput("nproc")
     return ([
       'open_project '+prj_dir+prj_name+'.xpr',
       'reset_run synth_1',
@@ -447,7 +446,7 @@ class _tcl:
     if back_end == 'slurm':
       threads_num = 8
     else:
-      threads_num = commands.getoutput("nproc")
+      threads_num = subprocess.getoutput("nproc")
     return ([
       'open_project '+prj_dir+prj_name,
       'reset_run synth_1',
@@ -826,15 +825,15 @@ class gen_basic:
   ######################################################################################################################################################
   # help functions start
   def print_params(self):
-    print self.prflow_params
+    print (self.prflow_params)
 
   def print_list(self, in_list):
     for num, value in enumerate(in_list):
-      print str(num)+'\t'+str(value)
+      print (str(num)+'\t'+str(value))
 
   def print_dict(self, in_dict):
     for key, value in sorted(in_dict.items()):
-      print str(key).ljust(30)+'->'+str(value)
+      print (str(key).ljust(30)+'->'+str(value))
 
   def has_pattern(self, in_str, pattern_str):
     if in_str.replace(pattern_str, '') == in_str:

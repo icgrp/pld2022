@@ -18,7 +18,7 @@
 
 import os  
 import subprocess
-from gen_basic import gen_basic
+from pr_flow.gen_basic import gen_basic
 
 
 

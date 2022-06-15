@@ -2,7 +2,7 @@
 
 import os  
 import subprocess
-from gen_basic import gen_basic
+from pr_flow.gen_basic import gen_basic
 class bit(gen_basic):
   #def __init__(self, prflow_params):
   #  self.prflow_params = prflow_params

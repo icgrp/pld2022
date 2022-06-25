@@ -16,7 +16,7 @@ const int MAX_WIDTH = 1024;
 #include "hls_stream.h"
 #include <cassert>
 #ifndef RISCV
-  #include "/apps/Xilinx/Vivado/2021.1/include/multimediaIps/xf_video_mem.hpp"
+  #include "/opt/Xilinx/Vivado/2021.1/include/multimediaIps/xf_video_mem.hpp"
 #endif
 typedef ap_uint<32> databus_t;
 typedef ap_uint<128> bit128;

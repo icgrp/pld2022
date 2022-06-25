@@ -15,4 +15,4 @@ create_clock -name hbm_aclk_in -period 2.222 [get_ports hbm_aclk_in]
 
 ################################################################################
 # Kernel clock overridden by user
-create_clock -name USER_clk_kernel_in -period 5.0 [get_ports clk_kernel_in]
+create_clock -name USER_clk_kernel_in -period 4.0 [get_ports clk_kernel_in]

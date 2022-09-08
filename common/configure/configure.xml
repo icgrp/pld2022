@@ -6,7 +6,7 @@
    
   <!--spec name = "board"              value = "ultra96" -->
   <spec name = "board"              value = "au50" />
-  <spec name = "Xilinx_dir"         value = "/opt/Xilinx/Vitis/2021.1/settings64.sh" />
+  <spec name = "Xilinx_dir"         value = "/scratch/unsafe/Xilinx/Vitis/2022.1/settings64.sh" />
   <spec name = "xrt_dir"            value = "/opt/xilinx/xrt/setup.sh" />
 
 

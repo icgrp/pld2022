@@ -81,12 +81,13 @@ resize_pblock [get_pblocks p_12] -add {RAMB36_X8Y60:RAMB36_X10Y70}
 resize_pblock [get_pblocks p_12] -add {URAM288_X2Y80:URAM288_X3Y91}
 
 create_pblock p_13
-resize_pblock [get_pblocks p_13] -add {SLICE_X168Y360:SLICE_X188Y479}
-resize_pblock [get_pblocks p_13] -add {DSP48E2_X24Y138:DSP48E2_X26Y185}
-resize_pblock [get_pblocks p_13] -add {LAGUNA_X24Y240:LAGUNA_X25Y359}
-resize_pblock [get_pblocks p_13] -add {RAMB18_X11Y144:RAMB18_X11Y191}
-resize_pblock [get_pblocks p_13] -add {RAMB36_X11Y72:RAMB36_X11Y95}
-resize_pblock [get_pblocks p_13] -add {URAM288_X4Y96:URAM288_X4Y127}
+add_cells_to_pblock [get_pblocks p_13] [get_cells -quiet [list level0_i/ulp/ydma_1/page13_inst]]
+resize_pblock [get_pblocks p_13] -add {SLICE_X169Y425:SLICE_X231Y479}
+resize_pblock [get_pblocks p_13] -add {DSP48E2_X24Y164:DSP48E2_X31Y185}
+resize_pblock [get_pblocks p_13] -add {LAGUNA_X24Y250:LAGUNA_X31Y359}
+resize_pblock [get_pblocks p_13] -add {RAMB18_X11Y170:RAMB18_X13Y191}
+resize_pblock [get_pblocks p_13] -add {RAMB36_X11Y85:RAMB36_X13Y95}
+resize_pblock [get_pblocks p_13] -add {URAM288_X4Y116:URAM288_X4Y127}
 
 create_pblock p_14
 resize_pblock [get_pblocks p_14] -add {SLICE_X118Y360:SLICE_X160Y419}

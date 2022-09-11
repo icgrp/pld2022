@@ -4,8 +4,9 @@
   <spec name = "riscv_dir"          value = "/apps/riscv32i" />
   <!--specifications for pr_flow tool-->
    
+  <spec name = "board"              value = "zcu102" />
   <!--spec name = "board"              value = "ultra96" -->
-  <spec name = "board"              value = "au50" />
+  <!--spec name = "board"              value = "au50" -->
   <spec name = "Xilinx_dir"         value = "/scratch/unsafe/Xilinx/Vitis/2022.1/settings64.sh" />
   <spec name = "xrt_dir"            value = "/opt/xilinx/xrt/setup.sh" />
 

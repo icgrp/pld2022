@@ -36,9 +36,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "input_data.h"
 
 
-#define CONFIG_SIZE 24
-#define INPUT_SIZE (3*NUM_3D_TRI)
-#define OUTPUT_SIZE (NUM_FB/16)
+#define CONFIG_SIZE 4
+#define INPUT_SIZE (32768)
+#define OUTPUT_SIZE (32768)
 
 
 // Forward declaration of utility functions included at the end of this file
@@ -94,36 +94,27 @@ int main(int argc, char **argv)
     //{
 
     in1[0].range(63, 32) = 0x00000000;
-    in1[0].range(31,  0) = 0x00000000;
+    in1[0].range(31,  0) = 0x00000002;
 
     in1[1].range(63, 32) = 0x00000000;
-    //in1[1].range(31,  0) = 0x00002568;
     in1[1].range(31,  0) = OUTPUT_SIZE;
+
+    in1[2].range(63, 32) = 0xffffffff;
+    in1[2].range(31,  0) = 0xffffffff;
+
+    in1[3].range(63, 32) = 0xffffffff;
+    in1[3].range(31,  0) = 0xffffffff;
+
+
 
     // configure packets
 
-  for ( int i = 0; i < NUM_3D_TRI; i++)
+  for ( int i = 0; i < INPUT_SIZE; i++)
   {
-    in2[3*i](7,0)     = triangle_3ds[i].x0;
-    in2[3*i](15,8)    = triangle_3ds[i].y0;
-    in2[3*i](23,16)   = triangle_3ds[i].z0;
-    in2[3*i](31,24)   = triangle_3ds[i].x1;
-    in2[3*i+1](7,0)   = triangle_3ds[i].y1;
-    in2[3*i+1](15,8)  = triangle_3ds[i].z1;
-    in2[3*i+1](23,16) = triangle_3ds[i].x2;
-    in2[3*i+1](31,24) = triangle_3ds[i].y2;
-    in2[3*i+2](7,0)   = triangle_3ds[i].z2;
-    in2[3*i+2](31,8)  = 0;
-  }
-
-      /*
-    for ( int i = 0; i < NUM_3D_TRI * 3; i++)
-    {
-    	for(int j=0; j<16; j++){
-    		in2[i](32*j+31, 32*j) = i*16+j;
-    	}
+    for( int j=0; j<16; j++){
+      in2[i](32*j+31, 32*j)  = i;
     }
-    */
+  }
 
 
     // ------------------------------------------------------------------------------------
@@ -227,34 +218,10 @@ char *read_binary_file(const std::string &xclbin_file_name, unsigned &nb)
 
 void check_results(bit512* output)
 {
-    bit8 frame_buffer_print[MAX_X][MAX_Y];
-
-    // read result from the 32-bit output buffer
-    for (int i=0; i<NUM_FB/16; i++){
-      for(int j=0; j<64; j++){
-        int n=i*64+j;
-        int row = n/256;
-        int col = n%256;
-        frame_buffer_print[row][col] = output[i](8*j+7, 8*j);
-      }
+  for(int i=0; i<OUTPUT_SIZE; i++){
+    for(int j=0; j<16; j++){
+      std::cout << (unsigned int) (output[i](32*j+31, 32*j)) << "_";
     }
-
-  // print result
-  {
-    for (int j = MAX_X - 1; j >= 0; j -- )
-    {
-      for (int i = 0; i < MAX_Y; i ++ )
-      {
-        int pix;
-        pix = frame_buffer_print[i][j].to_int();
-        if (pix){
-          std::cout << "1";
-        }else{
-          std::cout << "0";
-        }
-      }
-      std::cout << std::endl;
-    }
+    std::cout << std::endl;
   }
-
 }

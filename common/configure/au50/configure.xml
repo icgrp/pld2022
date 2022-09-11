@@ -18,7 +18,7 @@
   <spec name = "nl"                  value = "32" />
   <spec name = "packet_bits"         value = "49" />
   <spec name = "addr_bits"           value = "5" />
- 
+
   <spec name = "mono_freq_MHz"       value = "300" />
   <spec name = "pr_freq_MHz"         value = "200" />
 </configuration>

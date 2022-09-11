@@ -20,7 +20,8 @@ sdk_dir
 # Make sure everything is up to date
 # make app.exe
 # make clean
-make all
+# make all
+make ydma.xclbin
 # make $1 
 # make ${kl_name}.xo
 

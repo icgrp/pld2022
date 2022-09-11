@@ -138,7 +138,7 @@ class overlay(gen_basic):
       str_line+='./pack.sh\n'
       str_line+='cd -\n'
       str_line+='make ydma.xclbin\n'
-      self.shell.replace_lines(self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh', {'make all': str_line}) 
+      # self.shell.replace_lines(self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh', {'make all': str_line}) 
       self.shell.replace_lines(self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/Makefile', {'kernel_frequency': '                 --kernel_frequency '+self.prflow_params['pr_freq_MHz']+' \\'}) 
       os.system('chmod +x '+self.overlay_dir+'/ydma/'+self.prflow_params['board']+'/build.sh')
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <!--specifications for pr_flow tool-->
-  <spec name = "PLATFORM_REPO_PATHS" value=  "/opt/xilinx/platforms/xilinx_zcu102_base_dfx_202110_1" />
-  <spec name = "ROOTFS"              value = "/opt/xilinx/platforms/xilinx_zcu102_base_dfx_202110_1/sw/xilinx_zcu102_base_dfx_202110_1/xrt/filesystem" />
-  <spec name = "PLATFORM"            value = "xilinx_zcu102_base_dfx_202110_1" />
-  <spec name = "sdk_dir"             value = "/opt/xilinx-zynqmp-common-v2021.1/ir/environment-setup-cortexa72-cortexa53-xilinx-linux" />
+  <spec name = "PLATFORM_REPO_PATHS" value=  "/scratch/unsafe/Xilinx/platforms/xilinx_zcu102_base_dfx_202210_1" />
+  <spec name = "ROOTFS"              value = "/scratch/unsafe/Xilinx/xilinx-zynqmp-common-v2022.1" />
+  <spec name = "sdk_dir"             value = "/scratch/unsafe/Xilinx/xilinx-zynqmp-common-v2022.1/sdk/environment-setup-cortexa72-cortexa53-xilinx-linux" />
+  <spec name = "PLATFORM"            value = "xilinx_zcu102_base_dfx_202210_1" />
 
   <spec name = "board"               value = "zcu102" />
   <spec name = "device"              value = "xczcu9_0" />
@@ -18,5 +18,7 @@
   <spec name = "nl"                  value = "32" />
   <spec name = "packet_bits"         value = "49" />
   <spec name = "addr_bits"           value = "5" />
- 
+
+  <spec name = "mono_freq_MHz"       value = "300" />
+  <spec name = "pr_freq_MHz"         value = "200" />
 </configuration>

@@ -80,8 +80,10 @@ We copy the installation guide from [picorv32](https://github.com/cliffordwolf/p
 as below.
 
     git clone https://github.com/riscv/riscv-gnu-toolchain
+    sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
+
     cd ./riscv-gnu-toolchain
-    ./configure --prefix=/opt/riscv --with-arch=rv32gc --with-abi=ilp32d
+    ./configure --prefix=/opt/riscv --with-arch=rv32gc --with-abi=ilp32
     make
 
 ## 3 Benchmark Preparation

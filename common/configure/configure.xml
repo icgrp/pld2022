@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <!--spec name = "riscv_dir"          value = "/opt/riscv32" -->
-  <spec name = "riscv_dir"          value = "/apps/riscv32i" />
+  <spec name = "riscv_dir"          value = "/scratch/unsafe/RISCV/riscv32i" />
   <!--specifications for pr_flow tool-->
    
   <!--spec name = "board"              value = "ultra96" -->
   <spec name = "board"              value = "au50" />
-  <spec name = "Xilinx_dir"         value = "/apps/Xilinx/Vitis/2021.1/settings64.sh" />
+  <spec name = "Xilinx_dir"         value = "/scratch/unsafe/Xilinx/Vitis/2021.1/settings64.sh" />
   <spec name = "xrt_dir"            value = "/apps/xilinx/xrt/setup.sh" />
 
 
@@ -25,8 +25,8 @@
   <spec name = "maxThreads"         value = "8" />
   <spec name = "maxJobs"            value = "32" />
   <spec name = "node"               value = "4" />
-  <spec name = "back_end"           value = "slurm" />
-  <!--spec name = "back_end"           value = "local" -->
+  <!--spec name = "back_end"           value = "slurm" -->
+  <spec name = "back_end"           value = "local" />
   <!--spec name = "back_end"           value = "qsub" -->
   <spec name = "mem"                value = "7000mb" />
   <!--spec name = "mem"                value = "8G" -->

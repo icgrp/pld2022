@@ -42,7 +42,7 @@ class impl(gen_basic):
 
     map_target_exist, map_target = self.pragma.return_pragma('./input_src/'+self.prflow_params['benchmark_name']+'/operators/'+operator+'.h', 'map_target')
     if map_target == 'RISCV':
-      syn_inst = syn.syn(self.prflow_params)
+      syn_inst = pr_flow.syn.syn(self.prflow_params)
       map_target, page_num, input_num, output_num =  syn_inst.return_map_target(operator)
       debug_exist, debug_port = self.pragma.return_pragma('./input_src/'+self.prflow_params['benchmark_name']+'/operators/'+operator+'.h', 'debug_port')
       if(debug_exist): output_num = output_num+1

@@ -10,7 +10,7 @@
 from sys import argv
 
 binfile = argv[1]
-nwords = int(argv[2])
+nwords = int(float(argv[2]))
 page_num = int(argv[3])
 
 

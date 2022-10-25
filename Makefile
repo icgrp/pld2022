@@ -6,9 +6,9 @@
 
 
 #prj_name=datamover
-#prj_name=rendering512
+prj_name=rendering512
 #prj_name=rendering_explore
-prj_name=digit_reg512
+#prj_name=digit_reg512
 #prj_name=bnn512
 #prj_name=bnn1
 #prj_name=face_detection512

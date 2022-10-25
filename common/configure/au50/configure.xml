@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <!--specifications for pr_flow tool-->
-  <spec name = "PLATFORM_REPO_PATHS" value=  "/apps/xilinx/platforms/xilinx_u50_gen3x16_xdma_201920_3" />
+  <spec name = "PLATFORM_REPO_PATHS" value=  "/scratch/unsafe/Xilinx/platforms/xilinx_u50_gen3x16_xdma_201920_3" />
   <spec name = "ROOTFS"              value = "" />
   <spec name = "sdk_dir"             value = "" />
   <spec name = "PLATFORM"            value = "xilinx_u50_gen3x16_xdma_201920_3" />

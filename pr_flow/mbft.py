@@ -1,6 +1,6 @@
 import os  
 import subprocess
-from gen_basic import gen_basic
+from pr_flow.gen_basic import gen_basic
 
 class mbft(gen_basic):
 
@@ -105,7 +105,7 @@ class mbft(gen_basic):
                   '../../src/rise_detect.v',
                   '../../src/user_kernel.v',
         ]
-        print "========================================="
+        print ("=========================================")
         self.shell.write_lines(self.mono_bft_dir+'/ip_repo/'+fun_name+'/ip_page.tcl', self.tcl.return_ip_page_tcl_list(fun_name, page_num, file_list))
         self.shell.write_lines(self.mono_bft_dir+'/ip_repo/'+fun_name+'/run.sh',      self.shell.return_run_sh_list(self.prflow_params['Xilinx_dir'], 'ip_page.tcl'), True)
         self.shell.write_lines(self.mono_bft_dir+'/ip_repo/'+fun_name+'/qsub_run.sh', self.shell.return_run_sh_list(self.prflow_params['Xilinx_dir'], 'ip_page.tcl'), True)

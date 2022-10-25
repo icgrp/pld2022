@@ -14,7 +14,7 @@
 
 
 import time
-from gen_basic import gen_basic
+from pr_flow.gen_basic import gen_basic
 import re
 
 class config(gen_basic):
@@ -173,7 +173,7 @@ class config(gen_basic):
       src_port = int(src_output.replace('Output_',''))+int(self.prflow_params['output_port_base'])-1
       dest_page = int(page_num_dict[dest_operator])
       dest_port = int(dest_input.replace('Input_',''))+int(self.prflow_params['input_port_base'])-1
-      print src_page,src_port,'->',dest_page,dest_port 
+      print (src_page,src_port,'->',dest_page,dest_port)
       src_page_packet =                   (src_page  << self.page_addr_offset)
       src_page_packet = src_page_packet + (       0  << self.port_offset)
       src_page_packet = src_page_packet + (src_port  << self.config_port_offset)

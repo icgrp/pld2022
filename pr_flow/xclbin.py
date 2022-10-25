@@ -2,9 +2,9 @@
 
 import os  
 import subprocess
-from gen_basic import gen_basic
+from pr_flow.gen_basic import gen_basic
 import re
-import syn 
+import pr_flow.syn 
 
 class xclbin(gen_basic):
 

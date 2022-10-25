@@ -48,39 +48,39 @@ all: $(operators_runtime_target)
 mono: $(mono_target)
 
 $(mono_target):./input_src/$(prj_name)/host/top.cpp ./pr_flow/monolithic.py $(operators_hls_targets)
-	python2 pr_flow.py $(prj_name) -monolithic -op '$(basename $(notdir $(operators_bit_targets)))'
+	python pr_flow.py $(prj_name) -monolithic -op '$(basename $(notdir $(operators_bit_targets)))'
 	cd $(ws_mono) && ./main.sh
 	
 $(operators_runtime_target):./input_src/$(prj_name)/host/host.cpp $(operators_xclbin_targets) ./pr_flow/runtime.py
-	python2 pr_flow.py $(prj_name) -runtime -op '$(basename $(notdir $(operators_bit_targets)))'
+	python pr_flow.py $(prj_name) -runtime -op '$(basename $(notdir $(operators_bit_targets)))'
 	cp $(operators_xclbin_targets) $(ws_bit)/sd_card
 	cd $(ws_bit)/$(prj_name)/sw_emu && ./build_and_run.sh
 	
 $(operators_xclbin_targets):$(ws_bit)/%.xclbin:$(ws_bit)/%.bit
-	python2 pr_flow.py $(prj_name) -xclbin -op $(basename $(notdir $@))
+	python pr_flow.py $(prj_name) -xclbin -op $(basename $(notdir $@))
 	cd $(ws_bit) && ./main_$(basename $(notdir $@)).sh
 
 $(download_target): $(operators_bit_targets)
-	python2 pr_flow.py $(prj_name) -bit -op '$(basename $(notdir $^))'
+	python pr_flow.py $(prj_name) -bit -op '$(basename $(notdir $^))'
 
 bits:$(operators_bit_targets)
 # Implementation from post-synthesis DCP to bitstreams
 # generate bitstream for each operator
 $(operators_bit_targets):$(ws_bit)/%.bit:$(ws_overlay)/__overlay_is_ready__ $(ws_syn)/%/page_netlist.dcp 
-	python2 pr_flow.py $(prj_name) -impl -op $(basename $(notdir $@))
+	python pr_flow.py $(prj_name) -impl -op $(basename $(notdir $@))
 	cd $(ws_impl)/$(basename $(notdir $@)) && ./main.sh
 
 syn:$(operators_syn_targets)
 # Out-of-Context Synthesis from Verilog to post-synthesis DCP
 $(operators_syn_targets):$(ws_syn)/%/page_netlist.dcp:$(ws_hls)/runLog%.log $(ws_overlay)/__overlay_is_ready__
-	python2 pr_flow.py $(prj_name) -syn -op $(subst runLog,,$(basename $(notdir $<)))
+	python pr_flow.py $(prj_name) -syn -op $(subst runLog,,$(basename $(notdir $<)))
 	#cd $(ws_syn)/$(subst runLog,,$(basename $(notdir $<)))/riscv && ./qsub_run.sh
 	cd $(ws_syn)/$(subst runLog,,$(basename $(notdir $<))) && ./main.sh
 
 
 # High-Level-Synthesis from C to Verilog
 $(operators_hls_targets):$(ws_hls)/runLog%.log:$(operators_dir)/%.cpp $(operators_dir)/%.h
-	python2 pr_flow.py $(prj_name) -hls -op $(basename $(notdir $<))
+	python pr_flow.py $(prj_name) -hls -op $(basename $(notdir $<))
 	cd $(ws_hls) && ./main_$(basename $(notdir $<)).sh
 
 
@@ -96,36 +96,36 @@ $(operators_hls_targets):$(ws_hls)/runLog%.log:$(operators_dir)/%.cpp $(operator
 $(ws_overlay)/src : common/verilog_src/*  common/script_src/project_syn_gen_zcu102.tcl
 	rm -rf ./workspace/F001_overlay
 	mkdir -p ./workspace/F001_overlay
-	python2 pr_flow.py $(prj_name) -g
+	python pr_flow.py $(prj_name) -g
 
 
 config: $(config_target)
 
 $(config_target): $(operators_src)
-	python2 pr_flow.py $(prj_name) -cfg -op '$(basename $(notdir $^))'
+	python pr_flow.py $(prj_name) -cfg -op '$(basename $(notdir $^))'
 	cp $(ws)/F008_sdk_$(prj_name)/cpp_src/* $(ws)/vitis/$(prj_name)/src/
 
 
 
 HW:
-	python2 ./pr_flow/riscv2HW.py $(prj_name)
+	python ./pr_flow/riscv2HW.py $(prj_name)
 
 riscv:
-	python2 ./pr_flow/HW2riscv.py $(prj_name)
+	python ./pr_flow/HW2riscv.py $(prj_name)
 
 
 mono_prj: $(mono_bft_target)
 
 # prepare the logic equivalent monolithic project 
 $(mono_bft_target): $(ws_overlay)/src  $(operators_ip_targets)
-	python2 pr_flow.py $(prj_name) -mbft
+	python pr_flow.py $(prj_name) -mbft
 	cd $(ws_mbft) && ./main.sh
 
 
 # prepare the ip package for monolithic project
 $(operators_ip_targets):$(ws_mbft)/ip_repo/%/prj/floorplan_static.xpr:$(ws_hls)/runLog%.log
 	echo $@
-	python2 pr_flow.py $(prj_name) -ip -op $(subst runLog,,$(basename $(notdir $<)))
+	python pr_flow.py $(prj_name) -ip -op $(subst runLog,,$(basename $(notdir $<)))
 	cd $(ws_mbft)/ip_repo/$(subst runLog,,$(basename $(notdir $<))) && ./qsub_run.sh
 
 cp_mono_prj: ./workspace/vitis/floorplan_static_wrapper.xsa 
@@ -137,7 +137,7 @@ cp_mono_prj: ./workspace/vitis/floorplan_static_wrapper.xsa
 overlay: $(ws_overlay)/__overlay_is_ready__
 
 $(ws_overlay)/__overlay_is_ready__:
-	python2 pr_flow.py $(prj_name) -g
+	python pr_flow.py $(prj_name) -g
 	cp -rf ./common/overlay/size_table/* ./workspace/F001_overlay
 	cd ./workspace/F001_overlay && ./main.sh
 	
@@ -157,7 +157,7 @@ touch:
 
 .PHONY: report 
 report: 
-	 python2 ./pr_flow.py $(prj_name) -op '$(basename $(notdir $(operators_bit_targets)))' -rpt
+	 python ./pr_flow.py $(prj_name) -op '$(basename $(notdir $(operators_bit_targets)))' -rpt
 
 clear:
 	rm -rf ./workspace/*$(prj_name) 

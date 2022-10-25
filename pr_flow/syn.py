@@ -18,7 +18,7 @@
 
 import os  
 import subprocess
-from gen_basic import gen_basic
+from pr_flow.gen_basic import gen_basic
 import pr_flow.config as config
 import re
 
@@ -163,9 +163,9 @@ class syn(gen_basic):
       self.prepare_HW(operator, page_num, input_num, output_num)
 
     inst_mem_bits = self.return_bit_size(inst_mem_size-1)-2
-    print 'inst_mem_bits', inst_mem_bits
+    print ('inst_mem_bits', inst_mem_bits)
     LENGTH = '0x'+hex(int(inst_mem_size)).replace('0x', '').zfill(8)
-    print LENGTH
+    print (LENGTH)
     # create a riscv dirctory
     self.shell.cp_dir('./common/riscv_src/riscv/*', self.syn_dir+'/'+operator)
     self.shell.replace_lines(self.syn_dir+'/'+operator+'/run.sh', {'RISCV_GNU_TOOLCHAIN_INSTALL_PREFIX=': 'RISCV_GNU_TOOLCHAIN_INSTALL_PREFIX='+self.prflow_params['riscv_dir']}) 
